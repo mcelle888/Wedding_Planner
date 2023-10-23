@@ -17,6 +17,16 @@
 #### Screenshots Day 1
 ![screenshot1](docs/day1start.png)
 
+![screenshot2](docs/feature1_day1.png)
+
+![screenshot3](docs/feature2_day1.png)
+
+![screenshot4](docs/feature3_day1.png)
+
+ 
+![screenshot5](docs/day1_end.png)
+
+
 #### Screenshots Day 2
 
 #### Screenshots Day 3
