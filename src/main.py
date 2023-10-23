@@ -3,12 +3,12 @@ import emoji
 from colorama import Fore, Back, Style
 import datetime 
 from methods import introduction
-from weddingcost import WeddingItems, Venue, Florist, Food, Decoration, MakeupHair, PhotoVideo, Dress, Cake 
+from weddingcost import WeddingItems, Venue, Florist, Food, Decoration, MakeupHair, PhotoVideo, Dress, Cake, Ring 
 
 # Opening App
 f = Figlet(font='contessa')
-print(f.renderText('Congratulations!'))
-print(emoji.emojize("Congrats on your engagement :red_heart:  Let's get you started!", variant="emoji_type"))
+print(f.renderText('~~~ Congratulations! ~~~'))
+print(emoji.emojize("Congrats on your engagement:red_heart:  Let's get you started on some planning!", variant="emoji_type"))
 
 
 introduction()
@@ -52,3 +52,12 @@ print(Fore.LIGHTBLUE_EX + f"{dress_object.__dict__}")
 cake_object = Cake("cake shop ")
 cake_object.ask_user()
 print(Fore.LIGHTBLUE_EX + f"{cake_object.__dict__}")
+
+# Ring input
+ring_object = Ring("wedding ring shop")
+ring_object.ask_user()
+print(Fore.LIGHTBLUE_EX + f"{ring_object.__dict__}")
+
+print(Style.RESET_ALL)
+print(emoji.emojize("Thank you for that :smiling_face_with_smiling_eyes:", variant="emoji_type"))
+print("Now let's print out a plan for you!")

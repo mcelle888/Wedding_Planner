@@ -64,3 +64,8 @@ class Dress(WeddingItems):
 class Cake(WeddingItems): 
     def get_recc(self):
         print("Here are some recommendations for you")
+
+# RING
+class Ring(WeddingItems):
+    def get_recc(self):
+        print("Here are some recommendations for you")
