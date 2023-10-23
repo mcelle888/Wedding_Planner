@@ -1,33 +1,36 @@
-Item, Price,  Description
-Venue1, 10000,  Restaurant in the city
-Venue2, 15000, Restaruant by the beach
-Venue3, 20000, Restaurant by winery 
+Item_name, Price,  Description
+LuxeCraves, 10000,  A modern restaurant located in middle of the city offering stunning skyline views!
+Summer Retreat, 15000, A beautiful home infront of the beach with a stunning ocean backdrop and gorgeous sunset views!
+Tornbury Castle, 20000, An old castle situated in the middle of a grand winery with beautiful greenary and unlimited access around the estate for amazing photo opportunities!
 
-Food1, 75, Specialises in cocktail menu
-Food2, 90,  Specialises in asian cuisine
-Food3, 125, Specialises in european cuisine
+Nibble, 75, Specialises in cocktail menus for those looking for a smaller reception. Includes a variety of canapes and sides with unlimited breverages. 
+FoodHaven, 90,  Specialises in Asian cuisine. Includes a 3 set course meal with 2 sides and a breverage package.
+GourmetDelights, 125, Specialises in European cuisine. Includes a 5 set course meal with 2 canapes and pre-service drinks with a deluxe breverage package.
 
-Florist1, 1000, selection of 
-Florist2, 1500, selection of
-Florist3, 2000, selection of 
+FlowersbySam, 1000, Selection of standard flowers set which includes 3 items using 2 types of flowers.
+Harvest, 1500, Selection of premium flower set which includes 5 items using 3 types of flowers.
+Bloom, 2000, Selection of deluxe flower set which includes 8 items using 4 types of flowers.
 
-Decorations1, 
-Decorations2, 
-Decorations3,
+Festiva, 1500, Specialises in small events 
+MagicEvents, 1800, Specialises in medium events 
+MomentousOccasions, 2500, Specialises in large events 
 
-Makeup1,
-Makeup2,
-Makeup3,
+Jesse'sBeauty, 500, 1 hair and makeup artist for the bride and 2 others.
+StylebyLisa, 800, 1 hair and makeup artist for the bride and 4 others.
+Radiance, 1000, 2 hair and makeup artists for the bride and 6 others.
 
-Photo1,
-Photo2,
-Photo3,
+Capture, 3500, 1 photographer and 1 videographer for 5 hours. Includes album and 5 minute video.
+Collections, 4500, 1 photographers and 1 videographer for 8 hours. Includes album and 1 large print aswell as 5 minute video.
+ArtStudio, 5500, 2 photographers and 1 videographer for 12 hours. Includes album and 2 large prints aswell as 10 minute video and 1 engagement photoshoot session. 
 
-Dress1,
-Dress2,
-Dress3,
+Simple, 2000, Specialises in secondhand dresses and suits.
+LoveBridal, 3000, Provides a range of different priced for dresses and suits.
+BlancCouture, 5000, Offers designer luxury branded dresses and suits.
 
-Cake1,
-Cake2,
-Cake3, 
+Katie'sBaking, 350, Offers a standard 2-tiered cake.
+Ichigo, 450, Offers a custom 2-tiered cake.
+LeBonne, 600, Specialises in custom tiered and design for larger cakes.
 
+Charm, 1000, Offers budget options for wedding bands
+Enchant, 2500, Offers mid-range options for wedding bands
+Opulent, 5000, Offers high-end options for wedding bands
