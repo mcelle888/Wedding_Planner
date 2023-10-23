@@ -2,18 +2,18 @@
 
 ### Link to github: 
 
-[link to github](https://github.com/mcelle888/MichelleLiang_T1A3) 
+[Github Link](https://github.com/mcelle888/MichelleLiang_T1A3) 
 
 ### Code Style Guide: 
 
-PEP8 Style Guide: [link to pep8-style guide](https://peps.python.org/pep-0008/#class-names) 
+[Pep8 Guide Link](https://peps.python.org/pep-0008/#class-names) 
 
 ### Features in the Application
 
 ### Help Documentation (How to Install and Use Application)
 
 ### Implementation Plan
-
+[Link to Trello](https://trello.com/invite/b/Znwe2osx/ATTIe18b45177370d1b63f89c519486af47b63E83DAE/terminal-app)
 #### Screenshots Day 1
 ![screenshot1](docs/day1start.png)
 
