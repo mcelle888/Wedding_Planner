@@ -2,42 +2,53 @@ from pyfiglet import Figlet
 import emoji
 from colorama import Fore, Back, Style
 import datetime 
-import cost
+from methods import introduction
+from weddingcost import WeddingItems, Venue, Florist, Food, Decoration, MakeupHair, PhotoVideo, Dress, Cake 
 
 # Opening App
 f = Figlet(font='contessa')
 print(f.renderText('Congratulations!'))
 print(emoji.emojize("Congrats on your engagement :red_heart:  Let's get you started!", variant="emoji_type"))
 
-# Basic information from user input
-def introduction(): 
-    user_name = input("Please enter your name: ")
-    wedding_date_y = int(input("Please enter the year of the wedding (yyyy): "))
-    wedding_date_m = int(input("Please enter the month of the wedding (mm): "))
-    wedding_date_d = int(input("Please enter the day of the wedding (dd): "))
-    # calculates total days till wedding
-    today_date = datetime.date.today()
-    wedding_date = datetime.date(wedding_date_y, wedding_date_m, wedding_date_d)
-    diff = (wedding_date-today_date).days
-   
-    total_budget= int(input("Enter your budget: "))
-    print(Fore.RED + "Name:", user_name, "\nDate:", wedding_date_d , wedding_date_m , wedding_date_y ,"\nTotal Budget:", total_budget)
-    print(Style.RESET_ALL)
-    # Checks with user if inputs are correct
-    confirm = input("Are these details correct? Please type 'y' or 'n': ")
-    if confirm == "n":
-        print("Okay, let's try again")
-        introduction() 
-    elif confirm == "y": 
-        print(emoji.emojize("Thanks for that:grinning_face_with_smiling_eyes: ", variant="emoji_type"))
-        print("There are", diff, "days left till the wedding. Let's get planning!")
 
-def venue():
-    pass
-      
 introduction()
 
+# Venue input
+venue_object = Venue("venue")
+venue_object.ask_user()
+print(Fore.BLUE + f"{venue_object.__dict__}") 
 
-
-
+# Florist input
+florist_object = Florist("florist")
+florist_object.ask_user()
+print(Fore.LIGHTBLUE_EX + f"{florist_object.__dict__}") 
  
+# Catering input
+food_object = Food("caterer")
+food_object.ask_user()
+print(Fore.LIGHTBLUE_EX + f"{food_object.__dict__}")
+
+# Decor input
+decoration_object = Decoration("event decorater ")
+decoration_object.ask_user()
+print(Fore.LIGHTBLUE_EX + f"{decoration_object.__dict__}")
+
+# Beauty service input
+makeup_hair_object = MakeupHair("make up and hair stylist")
+makeup_hair_object.ask_user()
+print(Fore.LIGHTBLUE_EX + f"{makeup_hair_object.__dict__}")
+
+# Photographer and Videographer input
+photo_video_object = PhotoVideo("photographer and videographer ")
+photo_video_object.ask_user()
+print(Fore.LIGHTBLUE_EX + f"{photo_video_object.__dict__}")
+
+# Dress input
+dress_object = Dress("dress and suit merchant ")
+dress_object.ask_user()
+print(Fore.LIGHTBLUE_EX + f"{dress_object.__dict__}")
+
+# Cake input
+cake_object = Cake("cake shop ")
+cake_object.ask_user()
+print(Fore.LIGHTBLUE_EX + f"{cake_object.__dict__}")
