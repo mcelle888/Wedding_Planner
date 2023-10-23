@@ -2,6 +2,7 @@ from pyfiglet import Figlet
 import emoji
 from colorama import Fore, Back, Style
 import datetime 
+import cost
 
 # Opening App
 f = Figlet(font='contessa')
@@ -30,6 +31,9 @@ def introduction():
     elif confirm == "y": 
         print(emoji.emojize("Thanks for that:grinning_face_with_smiling_eyes: ", variant="emoji_type"))
         print("There are", diff, "days left till the wedding. Let's get planning!")
+
+def venue():
+    pass
       
 introduction()
 
