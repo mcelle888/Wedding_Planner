@@ -45,20 +45,9 @@ class Venue(WeddingItems):
                      self.name = dataFrame.iloc[2,1]
                      self.cost = dataFrame.iloc[2,2]
         elif choice == 'D':
-            multi = ['A', 'B', 'C']
-            number = random.choice(multi)
-            if number == 'A': 
-                     self.name = dataFrame.iloc[0,1]
-                     self.cost = dataFrame.iloc[0,2]
-                    
-            elif number == 'B':
-                     self.name = dataFrame.iloc[1,1]
-                     self.cost = dataFrame.iloc[1,2]
-            elif number == 'C':
-                     self.name = dataFrame.iloc[2,1]
-                     self.cost = dataFrame.iloc[2,2]
-               
-             
+            number = random.choice([0,1,2])
+            self.name = dataFrame.iloc[number,1]
+            self.cost = dataFrame.iloc[number,2]   
         elif choice == 'E':
             self.name = "Undecided"
             self.cost = 15000
@@ -89,20 +78,9 @@ class Florist(WeddingItems):
                      self.name = dataFrame.iloc[8,1]
                      self.cost = dataFrame.iloc[8,2]
         elif choice == 'D':
-            multi = ['A', 'B', 'C']
-            number = random.choice(multi)
-            if number == 'A': 
-                     self.name = dataFrame.iloc[6,1]
-                     self.cost = dataFrame.iloc[6,2]
-                    
-            elif number == 'B':
-                     self.name = dataFrame.iloc[7,1]
-                     self.cost = dataFrame.iloc[7,2]
-            elif number == 'C':
-                     self.name = dataFrame.iloc[8,1]
-                     self.cost = dataFrame.iloc[8,2]
-               
-             
+            number = random.choice([0,1,2])
+            self.name = dataFrame.iloc[number,1]
+            self.cost = dataFrame.iloc[number,2]             
         elif choice == 'E':
             self.name = "Undecided"
             self.cost = 1500
@@ -135,20 +113,9 @@ class Food(WeddingItems):
                      self.name = dataFrame.iloc[5,1]
                      self.cost = int(dataFrame.iloc[5,2]) *num_people   
         elif choice == 'D':
-            multi = ['A', 'B', 'C']
-            number = random.choice(multi)
-            if number == 'A': 
-                     self.name = dataFrame.iloc[3,1]
-                     self.cost = int(dataFrame.iloc[3,2]) *num_people  
-                    
-            elif number == 'B':
-                     self.name = dataFrame.iloc[4,1]
-                     self.cost = int(dataFrame.iloc[4,2]) *num_people  
-            elif number == 'C':
-                     self.name = dataFrame.iloc[5,1]
-                     self.cost = int(dataFrame.iloc[5,2]) *num_people  
-               
-             
+            number = random.choice([0,1,2])
+            self.name = dataFrame.iloc[number,1]
+            self.cost = dataFrame.iloc[number,2]             
         elif choice == 'E':
             self.name = "Undecided"
             self.cost = 70 * num_people
@@ -181,18 +148,9 @@ class Decoration(WeddingItems):
         elif choice == 'D':
             multi = ['A', 'B', 'C']
             number = random.choice(multi)
-            if number == 'A': 
-                     self.name = dataFrame.iloc[9,1]
-                     self.cost = dataFrame.iloc[9,2]
-                    
-            elif number == 'B':
-                     self.name = dataFrame.iloc[10,1]
-                     self.cost = dataFrame.iloc[10,2]
-            elif number == 'C':
-                     self.name = dataFrame.iloc[11,1]
-                     self.cost = dataFrame.iloc[11,2]
-               
-             
+            number = random.choice([0,1,2])
+            self.name = dataFrame.iloc[number,1]
+            self.cost = dataFrame.iloc[number,2]       
         elif choice == 'E':
             self.name = "Undecided"
             self.cost = 1800
@@ -221,20 +179,9 @@ class MakeupHair(WeddingItems):
                      self.name = dataFrame.iloc[14,1]
                      self.cost = dataFrame.iloc[14,2]
         elif choice == 'D':
-            multi = ['A', 'B', 'C']
-            number = random.choice(multi)
-            if number == 'A': 
-                     self.name = dataFrame.iloc[12,1]
-                     self.cost = dataFrame.iloc[12,2]
-                    
-            elif number == 'B':
-                     self.name = dataFrame.iloc[13,1]
-                     self.cost = dataFrame.iloc[13,2]
-            elif number == 'C':
-                     self.name = dataFrame.iloc[14,1]
-                     self.cost = dataFrame.iloc[14,2]
-               
-             
+            number = random.choice([0,1,2])
+            self.name = dataFrame.iloc[number,1]
+            self.cost = dataFrame.iloc[number,2]             
         elif choice == 'E':
             self.name = "Undecided"
             self.cost = 800
@@ -254,8 +201,7 @@ class PhotoVideo(WeddingItems):
         dataFrame = pd.read_csv('recc.csv')
         if choice == 'A': 
                      self.name = dataFrame.iloc[15,1]
-                     self.cost = dataFrame.iloc[15,2]
-                    
+                     self.cost = dataFrame.iloc[15,2]             
         elif choice == 'B':
                      self.name = dataFrame.iloc[16,1]
                      self.cost = dataFrame.iloc[16,2]
@@ -263,20 +209,9 @@ class PhotoVideo(WeddingItems):
                      self.name = dataFrame.iloc[17,1]
                      self.cost = dataFrame.iloc[17,2]
         elif choice == 'D':
-            multi = ['A', 'B', 'C']
-            number = random.choice(multi)
-            if number == 'A': 
-                     self.name = dataFrame.iloc[15,1]
-                     self.cost = dataFrame.iloc[15,2]
-                    
-            elif number == 'B':
-                     self.name = dataFrame.iloc[16,1]
-                     self.cost = dataFrame.iloc[16,2]
-            elif number == 'C':
-                     self.name = dataFrame.iloc[17,1]
-                     self.cost = dataFrame.iloc[17,2]
-               
-             
+            number = random.choice([0,1,2])
+            self.name = dataFrame.iloc[number,1]
+            self.cost = dataFrame.iloc[number,2]             
         elif choice == 'E':
             self.name = "Undecided"
             self.cost = 3500
@@ -305,20 +240,9 @@ class Dress(WeddingItems):
                      self.name = dataFrame.iloc[20,1]
                      self.cost = dataFrame.iloc[20,2]
         elif choice == 'D':
-            multi = ['A', 'B', 'C']
-            number = random.choice(multi)
-            if number == 'A': 
-                     self.name = dataFrame.iloc[18,1]
-                     self.cost = dataFrame.iloc[18,2]
-                    
-            elif number == 'B':
-                     self.name = dataFrame.iloc[19,1]
-                     self.cost = dataFrame.iloc[19,2]
-            elif number == 'C':
-                     self.name = dataFrame.iloc[20,1]
-                     self.cost = dataFrame.iloc[20,2]
-               
-             
+            number = random.choice([0,1,2])
+            self.name = dataFrame.iloc[number,1]
+            self.cost = dataFrame.iloc[number,2]           
         elif choice == 'E':
             self.name = "Undecided"
             self.cost = 3000
@@ -339,8 +263,7 @@ class Cake(WeddingItems):
         dataFrame = pd.read_csv('recc.csv')
         if choice == 'A': 
                      self.name = dataFrame.iloc[21,1]
-                     self.cost = dataFrame.iloc[21,2]
-                    
+                     self.cost = dataFrame.iloc[21,2]                   
         elif choice == 'B':
                      self.name = dataFrame.iloc[22,1]
                      self.cost = dataFrame.iloc[22,2]
@@ -348,20 +271,9 @@ class Cake(WeddingItems):
                      self.name = dataFrame.iloc[23,1]
                      self.cost = dataFrame.iloc[23,2]
         elif choice == 'D':
-            multi = ['A', 'B', 'C']
-            number = random.choice(multi)
-            if number == 'A': 
-                     self.name = dataFrame.iloc[21,1]
-                     self.cost = dataFrame.iloc[21,2]
-                    
-            elif number == 'B':
-                     self.name = dataFrame.iloc[22,1]
-                     self.cost = dataFrame.iloc[22,2]
-            elif number == 'C':
-                     self.name = dataFrame.iloc[23,1]
-                     self.cost = dataFrame.iloc[23,2]
-               
-             
+            number = random.choice([0,1,2])
+            self.name = dataFrame.iloc[number,1]
+            self.cost = dataFrame.iloc[number,2]              
         elif choice == 'E':
             self.name = "Undecided"
             self.cost = 600
