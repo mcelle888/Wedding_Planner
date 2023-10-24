@@ -1,6 +1,8 @@
 from colorama import Fore, Back, Style
 import csv
-
+import pandas as pd
+import random 
+import emoji 
 
 class WeddingItems:
     name = None
@@ -24,84 +26,90 @@ class WeddingItems:
 # VENUE
 class Venue(WeddingItems):
     def get_recc(self):
-        print("Here are some recommendations for you")
+        print(emoji.emojize("Here are some recommendations for you :house:", variant="emoji_type"))
         
         with open('recc.csv') as f:
             csv_reader = csv.reader(f)
             for index, row in enumerate(csv_reader):
                 if index == 1 or index == 2 or index ==3:
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". It is",row[3])
-        print("Option D.  Randomly select one for me! \nOption E.  Leave blank (an average price of $15,000 will be used to calculate the final cost estimate)")
+        print("Option D.  Randomly select one for me! \nOption E.  Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
         choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        dataFrame = pd.read_csv('recc.csv')
         if choice == 'A': 
-            with open('recc.csv') as f:
-                csv_reader = csv.reader(f)
-                for index, row in enumerate(csv_reader):
-                    if index ==1: 
-                     self.name = row[1]
-                     self.cost = row[2]
+                     self.name = dataFrame.iloc[0,1]
+                     self.cost = dataFrame.iloc[0,2]
                     
         elif choice == 'B':
-            with open('recc.csv') as f:
-                csv_reader = csv.reader(f)
-                for index, row in enumerate(csv_reader):
-                    if index ==2: 
-                     self.name = row[1]
-                     self.cost = row[2]
+                     self.name = dataFrame.iloc[1,1]
+                     self.cost = dataFrame.iloc[1,2]
         elif choice == 'C':
-            with open('recc.csv') as f:
-                csv_reader = csv.reader(f)
-                for index, row in enumerate(csv_reader):
-                    if index ==3: 
-                     self.name = row[1]
-                     self.cost = row[2]
+                     self.name = dataFrame.iloc[2,1]
+                     self.cost = dataFrame.iloc[2,2]
         elif choice == 'D':
-            pass
+            multi = ['A', 'B', 'C']
+            number = random.choice(multi)
+            if number == 'A': 
+                     self.name = dataFrame.iloc[0,1]
+                     self.cost = dataFrame.iloc[0,2]
+                    
+            elif number == 'B':
+                     self.name = dataFrame.iloc[1,1]
+                     self.cost = dataFrame.iloc[1,2]
+            elif number == 'C':
+                     self.name = dataFrame.iloc[2,1]
+                     self.cost = dataFrame.iloc[2,2]
+               
+             
         elif choice == 'E':
             self.name = "Undecided"
             self.cost = 15000
 
+ 
+
 # FLORIST
 class Florist(WeddingItems):
     def get_recc(self):
-        print("Here are some recommendations")
+        print(emoji.emojize("Here are some recommendations for you :bouquet:", variant="emoji_type"))
         with open('recc.csv') as f:
             csv_reader = csv.reader(f)
             for index, row in enumerate(csv_reader):
                 if index == 7 or index == 8 or index == 9 :
-                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". It is",row[3])
-        print("Option D.  Randomly select one for me! \nOption E.  Leave blank (an average price of $15,000 will be used to calculate the final cost estimate)")
+                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". They offer a ",row[3])
+        print("Option D.  Randomly select one for me! \nOption E.  Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
         choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
-        
+        dataFrame = pd.read_csv('recc.csv')
         if choice == 'A': 
-            with open('recc.csv') as f:
-                csv_reader = csv.reader(f)
-                for index, row in enumerate(csv_reader):
-                    if index == 7: 
-                     self.name = row[1]
-                     self.cost = row[2]
-
+                     self.name = dataFrame.iloc[6,1]
+                     self.cost = dataFrame.iloc[6,2]
+                    
         elif choice == 'B':
-            with open('recc.csv') as f:
-                csv_reader = csv.reader(f)
-                for index, row in enumerate(csv_reader):
-                    if index == 8 : 
-                     self.name = row[1]
-                     self.cost = row[2]
+                     self.name = dataFrame.iloc[7,1]
+                     self.cost = dataFrame.iloc[7,2]
         elif choice == 'C':
-            with open('recc.csv') as f:
-                csv_reader = csv.reader(f)
-                for index, row in enumerate(csv_reader):
-                    if index == 9: 
-                     self.name = row[1]
-                     self.cost = row[2]
+                     self.name = dataFrame.iloc[8,1]
+                     self.cost = dataFrame.iloc[8,2]
         elif choice == 'D':
-            pass
+            multi = ['A', 'B', 'C']
+            number = random.choice(multi)
+            if number == 'A': 
+                     self.name = dataFrame.iloc[6,1]
+                     self.cost = dataFrame.iloc[6,2]
+                    
+            elif number == 'B':
+                     self.name = dataFrame.iloc[7,1]
+                     self.cost = dataFrame.iloc[7,2]
+            elif number == 'C':
+                     self.name = dataFrame.iloc[8,1]
+                     self.cost = dataFrame.iloc[8,2]
+               
+             
         elif choice == 'E':
             self.name = "Undecided"
-            self.cost = 15000        
+            self.cost = 1500
+         
    
 
 
@@ -109,81 +117,299 @@ class Florist(WeddingItems):
 class Food(WeddingItems):
     def get_recc(self):
         num_people = int(input('How many guests are attending? '))
-        print ("Here are some recommendations for you")
+        print(emoji.emojize("Here are some recommendations for you :fork_and_knife:", variant="emoji_type"))
         with open('recc.csv') as f:
             csv_reader = csv.reader(f)
             for index, row in enumerate(csv_reader):
                 if index == 4 or index == 5 or index == 6:
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],"pp. They",row[3])
-        print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price of $15,000 will be used to calculate the final cost estimate)")
+        print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
         choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        dataFrame = pd.read_csv('recc.csv')
         if choice == 'A': 
-            with open('recc.csv') as f:
-                csv_reader = csv.reader(f)
-                for index, row in enumerate(csv_reader):
-                    if index == 4: 
-                     self.name = row[1]
-                     self.cost = int(row[2]) * num_people 
-                
+                     self.name = dataFrame.iloc[3,1]
+                     self.cost = int(dataFrame.iloc[3,2]) * num_people 
+                    
         elif choice == 'B':
-            with open('recc.csv') as f:
-                csv_reader = csv.reader(f)
-                for index, row in enumerate(csv_reader):
-                    if index == 5: 
-                     self.name = row[1]
-                     self.cost = int(row[2]) * num_people 
+                     self.name = dataFrame.iloc[4,1]
+                     self.cost = int(dataFrame.iloc[4,2]) * num_people 
         elif choice == 'C':
-            with open('recc.csv') as f:
-                csv_reader = csv.reader(f)
-                for index, row in enumerate(csv_reader):
-                    if index == 6: 
-                     self.name = row[1]
-                     self.cost = int(row[2]) * num_people 
+                     self.name = dataFrame.iloc[5,1]
+                     self.cost = int(dataFrame.iloc[5,2]) *num_people   
         elif choice == 'D':
-            pass
+            multi = ['A', 'B', 'C']
+            number = random.choice(multi)
+            if number == 'A': 
+                     self.name = dataFrame.iloc[3,1]
+                     self.cost = int(dataFrame.iloc[3,2]) *num_people  
+                    
+            elif number == 'B':
+                     self.name = dataFrame.iloc[4,1]
+                     self.cost = int(dataFrame.iloc[4,2]) *num_people  
+            elif number == 'C':
+                     self.name = dataFrame.iloc[5,1]
+                     self.cost = int(dataFrame.iloc[5,2]) *num_people  
+               
+             
         elif choice == 'E':
             self.name = "Undecided"
-            self.cost = num_people * 90 
+            self.cost = 70 * num_people
       
 
 
 # DECOR
 class Decoration(WeddingItems):
     def get_recc(self):
-        print("Here are some recommendations")
+        print(emoji.emojize("Here are some recommendations for you :balloon:", variant="emoji_type"))
+        with open('recc.csv') as f:
+            csv_reader = csv.reader(f)
+            for index, row in enumerate(csv_reader):
+                if index == 10 or index == 11 or index == 12:
+                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". They",row[3])
+        print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
+        print(Style.RESET_ALL)
         choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        dataFrame = pd.read_csv('recc.csv')
+        if choice == 'A': 
+                     self.name = dataFrame.iloc[9,1]
+                     self.cost = dataFrame.iloc[9,2]
+                    
+        elif choice == 'B':
+                     self.name = dataFrame.iloc[10,1]
+                     self.cost = dataFrame.iloc[10,2]
+        elif choice == 'C':
+                     self.name = dataFrame.iloc[11,1]
+                     self.cost = dataFrame.iloc[11,2]
+        elif choice == 'D':
+            multi = ['A', 'B', 'C']
+            number = random.choice(multi)
+            if number == 'A': 
+                     self.name = dataFrame.iloc[9,1]
+                     self.cost = dataFrame.iloc[9,2]
+                    
+            elif number == 'B':
+                     self.name = dataFrame.iloc[10,1]
+                     self.cost = dataFrame.iloc[10,2]
+            elif number == 'C':
+                     self.name = dataFrame.iloc[11,1]
+                     self.cost = dataFrame.iloc[11,2]
+               
+             
+        elif choice == 'E':
+            self.name = "Undecided"
+            self.cost = 1800
 
 # BEAUTY SERVICES
 class MakeupHair(WeddingItems):
     def get_recc(self):
-        print("Here are some recommendations for you ")
+        print(emoji.emojize("Here are some recommendations for you :lipstick:", variant="emoji_type"))
+        with open('recc.csv') as f:
+            csv_reader = csv.reader(f)
+            for index, row in enumerate(csv_reader):
+                if index == 13 or index == 14 or index == 15:
+                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],"pp. They offer",row[3])
+        print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
+        print(Style.RESET_ALL)
         choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        dataFrame = pd.read_csv('recc.csv')
+        if choice == 'A': 
+                     self.name = dataFrame.iloc[12,1]
+                     self.cost = dataFrame.iloc[12,2]
+                    
+        elif choice == 'B':
+                     self.name = dataFrame.iloc[13,1]
+                     self.cost = dataFrame.iloc[13,2]
+        elif choice == 'C':
+                     self.name = dataFrame.iloc[14,1]
+                     self.cost = dataFrame.iloc[14,2]
+        elif choice == 'D':
+            multi = ['A', 'B', 'C']
+            number = random.choice(multi)
+            if number == 'A': 
+                     self.name = dataFrame.iloc[12,1]
+                     self.cost = dataFrame.iloc[12,2]
+                    
+            elif number == 'B':
+                     self.name = dataFrame.iloc[13,1]
+                     self.cost = dataFrame.iloc[13,2]
+            elif number == 'C':
+                     self.name = dataFrame.iloc[14,1]
+                     self.cost = dataFrame.iloc[14,2]
+               
+             
+        elif choice == 'E':
+            self.name = "Undecided"
+            self.cost = 800
 
 # PHOTO AND VIDEO
 class PhotoVideo(WeddingItems):
     def get_recc(self):
-        print("Here are some recommendations for you ")
+        print(emoji.emojize("Here are some recommendations for you :camera:", variant="emoji_type"))
+        with open('recc.csv') as f:
+            csv_reader = csv.reader(f)
+            for index, row in enumerate(csv_reader):
+                if index == 16 or index == 17 or index == 18:
+                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],"pp. They offer",row[3])
+        print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
+        print(Style.RESET_ALL)
         choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        dataFrame = pd.read_csv('recc.csv')
+        if choice == 'A': 
+                     self.name = dataFrame.iloc[15,1]
+                     self.cost = dataFrame.iloc[15,2]
+                    
+        elif choice == 'B':
+                     self.name = dataFrame.iloc[16,1]
+                     self.cost = dataFrame.iloc[16,2]
+        elif choice == 'C':
+                     self.name = dataFrame.iloc[17,1]
+                     self.cost = dataFrame.iloc[17,2]
+        elif choice == 'D':
+            multi = ['A', 'B', 'C']
+            number = random.choice(multi)
+            if number == 'A': 
+                     self.name = dataFrame.iloc[15,1]
+                     self.cost = dataFrame.iloc[15,2]
+                    
+            elif number == 'B':
+                     self.name = dataFrame.iloc[16,1]
+                     self.cost = dataFrame.iloc[16,2]
+            elif number == 'C':
+                     self.name = dataFrame.iloc[17,1]
+                     self.cost = dataFrame.iloc[17,2]
+               
+             
+        elif choice == 'E':
+            self.name = "Undecided"
+            self.cost = 3500
 
 # CLOTHES
 class Dress(WeddingItems):
     def get_recc(self):
-        print("Here are some recommendations for you ")
+        print(emoji.emojize("Here are some recommendations for you :dress:", variant="emoji_type"))
+        with open('recc.csv') as f:
+            csv_reader = csv.reader(f)
+            for index, row in enumerate(csv_reader):
+                if index == 19 or index == 20 or index == 21:
+                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],"pp. They ",row[3])
+        print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
+        print(Style.RESET_ALL)
         choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        dataFrame = pd.read_csv('recc.csv')
+        if choice == 'A': 
+                     self.name = dataFrame.iloc[18,1]
+                     self.cost = dataFrame.iloc[18,2]
+                    
+        elif choice == 'B':
+                     self.name = dataFrame.iloc[19,1]
+                     self.cost = dataFrame.iloc[19,2]
+        elif choice == 'C':
+                     self.name = dataFrame.iloc[20,1]
+                     self.cost = dataFrame.iloc[20,2]
+        elif choice == 'D':
+            multi = ['A', 'B', 'C']
+            number = random.choice(multi)
+            if number == 'A': 
+                     self.name = dataFrame.iloc[18,1]
+                     self.cost = dataFrame.iloc[18,2]
+                    
+            elif number == 'B':
+                     self.name = dataFrame.iloc[19,1]
+                     self.cost = dataFrame.iloc[19,2]
+            elif number == 'C':
+                     self.name = dataFrame.iloc[20,1]
+                     self.cost = dataFrame.iloc[20,2]
+               
+             
+        elif choice == 'E':
+            self.name = "Undecided"
+            self.cost = 3000
         
 
 # CAKE
 class Cake(WeddingItems): 
     def get_recc(self):
-        print("Here are some recommendations for you")
+        print(emoji.emojize("Here are some recommendations for you :shortcake:", variant="emoji_type"))
+        with open('recc.csv') as f:
+            csv_reader = csv.reader(f)
+            for index, row in enumerate(csv_reader):
+                if index == 22 or index == 23 or index == 24:
+                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],"pp. They ",row[3])
+        print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
+        print(Style.RESET_ALL)
         choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        dataFrame = pd.read_csv('recc.csv')
+        if choice == 'A': 
+                     self.name = dataFrame.iloc[21,1]
+                     self.cost = dataFrame.iloc[21,2]
+                    
+        elif choice == 'B':
+                     self.name = dataFrame.iloc[22,1]
+                     self.cost = dataFrame.iloc[22,2]
+        elif choice == 'C':
+                     self.name = dataFrame.iloc[23,1]
+                     self.cost = dataFrame.iloc[23,2]
+        elif choice == 'D':
+            multi = ['A', 'B', 'C']
+            number = random.choice(multi)
+            if number == 'A': 
+                     self.name = dataFrame.iloc[21,1]
+                     self.cost = dataFrame.iloc[21,2]
+                    
+            elif number == 'B':
+                     self.name = dataFrame.iloc[22,1]
+                     self.cost = dataFrame.iloc[22,2]
+            elif number == 'C':
+                     self.name = dataFrame.iloc[23,1]
+                     self.cost = dataFrame.iloc[23,2]
+               
+             
+        elif choice == 'E':
+            self.name = "Undecided"
+            self.cost = 600
 
 # RING
 class Ring(WeddingItems):
     def get_recc(self):
-        print("Here are some recommendations for you")
+        print(emoji.emojize("Here are some recommendations for you :ring:", variant="emoji_type"))
+        with open('recc.csv') as f:
+            csv_reader = csv.reader(f)
+            for index, row in enumerate(csv_reader):
+                if index == 25 or index == 26 or index == 27:
+                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],"pp. They ",row[3])
+        print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
+        print(Style.RESET_ALL)
         choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        dataFrame = pd.read_csv('recc.csv')
+        if choice == 'A': 
+                     self.name = dataFrame.iloc[24,1]
+                     self.cost = dataFrame.iloc[24,2]
+                    
+        elif choice == 'B':
+                     self.name = dataFrame.iloc[25,1]
+                     self.cost = dataFrame.iloc[25,2]
+        elif choice == 'C':
+                     self.name = dataFrame.iloc[26,1]
+                     self.cost = dataFrame.iloc[26,2]
+        elif choice == 'D':
+            multi = ['A', 'B', 'C']
+            number = random.choice(multi)
+            if number == 'A': 
+                     self.name = dataFrame.iloc[24,1]
+                     self.cost = dataFrame.iloc[24,2]
+                    
+            elif number == 'B':
+                     self.name = dataFrame.iloc[25,1]
+                     self.cost = dataFrame.iloc[25,2]
+            elif number == 'C':
+                     self.name = dataFrame.iloc[26,1]
+                     self.cost = dataFrame.iloc[26,2]
+               
+             
+        elif choice == 'E':
+            self.name = "Undecided"
+            self.cost = 2500
 
 
 def Calculator():

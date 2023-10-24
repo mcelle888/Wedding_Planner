@@ -6,23 +6,23 @@ A. ,Nibble, 50, specialise in cocktail menus for those looking for a smaller rec
 B. ,FoodHaven, 80,  specialise in Asian cuisine. Includes a 3 set course meal with 2 sides and a breverage package.
 C. ,GourmetDelights, 100, specialise in European cuisine. Includes a 5 set course meal with 2 canapes and pre-service drinks with a deluxe breverage package.
 A. ,FlowersbySam, 1000, selection of standard flowers set which includes 3 items using 2 types of flowers.
-B. ,Harvest, 1500, Selection of premium flower set which includes 5 items using 3 types of flowers.
-C. ,Bloom, 2000, Selection of deluxe flower set which includes 8 items using 4 types of flowers.
-A. ,Festiva, 1500, Specialises in small events 
-B. ,MagicEvents, 1800, Specialises in medium events 
-C. ,MomentousOccasions, 2500, Specialises in large events 
+B. ,Harvest, 1500, selection of premium flower set which includes 5 items using 3 types of flowers.
+C. ,Bloom, 2000, selection of deluxe flower set which includes 8 items using 4 types of flowers.
+A. ,Festiva, 1500, specialise in small events 
+B. ,MagicEvents, 1800, specialise in medium events 
+C. ,MomentousOccasions, 2500, specialise in large events 
 A. ,Jesse'sBeauty, 500, 1 hair and makeup artist for the bride and 2 others.
 B. ,StylebyLisa, 800, 1 hair and makeup artist for the bride and 4 others.
 C. ,Radiance, 1000, 2 hair and makeup artists for the bride and 6 others.
 A. ,Capture, 3500, 1 photographer and 1 videographer for 5 hours. Includes album and 5 minute video.
 B. ,Collections, 4500, 1 photographers and 1 videographer for 8 hours. Includes album and 1 large print aswell as 5 minute video.
 C. ,ArtStudio, 5500, 2 photographers and 1 videographer for 12 hours. Includes album and 2 large prints aswell as 10 minute video and 1 engagement photoshoot session. 
-A. ,Simple, 2000, Specialises in secondhand dresses and suits.
-B. ,LoveBridal, 3000, Provides a range of different priced for dresses and suits.
-C. ,BlancCouture, 5000, Offers designer luxury branded dresses and suits.
-A. ,Katie'sBaking, 350, Offers a standard 2-tiered cake.
-B. ,Ichigo, 450, Offers a custom 2-tiered cake.
-C. ,LeBonne, 600, Specialises in custom tiered and design for larger cakes.
-A. ,Charm, 1000, Offers budget options for wedding bands.
-B. ,Enchant, 2500, Offers mid-range options for wedding bands.
-C. ,Opulent, 5000, Offers high-end options for wedding bands.
+A. ,Simple, 2000, specialise in secondhand dresses and suits.
+B. ,LoveBridal, 3000, provide a range of different priced for dresses and suits.
+C. ,BlancCouture, 5000, offer designer luxury branded dresses and suits.
+A. ,Katie'sBaking, 350, offer a standard 2-tiered cake.
+B. ,Ichigo, 450, offer a custom 2-tiered cake.
+C. ,LeBonne, 600, specialise in custom tiered and design for larger cakes.
+A. ,Charm, 1000, offer budget options for wedding bands.
+B. ,Enchant, 2500, offer mid-range options for wedding bands.
+C. ,Opulent, 5000, offer high-end options for wedding bands.
