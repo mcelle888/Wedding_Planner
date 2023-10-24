@@ -302,20 +302,9 @@ class Ring(WeddingItems):
                      self.name = dataFrame.iloc[26,1]
                      self.cost = dataFrame.iloc[26,2]
         elif choice == 'D':
-            multi = ['A', 'B', 'C']
-            number = random.choice(multi)
-            if number == 'A': 
-                     self.name = dataFrame.iloc[24,1]
-                     self.cost = dataFrame.iloc[24,2]
-                    
-            elif number == 'B':
-                     self.name = dataFrame.iloc[25,1]
-                     self.cost = dataFrame.iloc[25,2]
-            elif number == 'C':
-                     self.name = dataFrame.iloc[26,1]
-                     self.cost = dataFrame.iloc[26,2]
-               
-             
+            number = random.choice([0,1,2])
+            self.name = dataFrame.iloc[number,1]
+            self.cost = dataFrame.iloc[number,2]        
         elif choice == 'E':
             self.name = "Undecided"
             self.cost = 2500
