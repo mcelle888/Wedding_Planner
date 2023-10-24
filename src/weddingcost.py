@@ -29,7 +29,7 @@ class Venue(WeddingItems):
             csv_reader = csv.reader(f)
             for index, row in enumerate(csv_reader):
                 if index == 1 or index == 2 or index ==3:
-                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". It is",row[3])
+                    print(Fore.BLUE+ "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". It is",row[3])
         print("Option D.  Randomly select one for me! \nOption E.  Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
         choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")

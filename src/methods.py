@@ -16,7 +16,7 @@ def introduction():
     wedding_date = datetime.date(wedding_date_y, wedding_date_m, wedding_date_d)
     diff = (wedding_date-today_date).days
    
-    total_budget= int(input("Enter your budget: "))
+    total_budget = int(input("Enter your budget: "))
     print(Fore.LIGHTMAGENTA_EX + "Name:", user_name, "\nDate:", wedding_date_d , wedding_date_m , wedding_date_y ,"\nTotal Budget:", total_budget)
     print(Style.RESET_ALL)
     # Checks with user if inputs are correct
@@ -27,6 +27,7 @@ def introduction():
     elif confirm == "y": 
         print(emoji.emojize("Thanks for that:grinning_face_with_smiling_eyes: ", variant="emoji_type"))
         print("There are", diff, "days left till the wedding. Let's get planning!")
+        # Printing to the end wedding plan text file
         with open('weddingplan.txt', 'w') as f:
             f.write("Name:")
             f.write(user_name)

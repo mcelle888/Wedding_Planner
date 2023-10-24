@@ -15,19 +15,26 @@
 ### Implementation Plan
 [Link to Trello](https://trello.com/invite/b/Znwe2osx/ATTIe18b45177370d1b63f89c519486af47b63E83DAE/terminal-app)
 #### Screenshots Day 1
+Start of day 1
 ![screenshot1](docs/day1start.png)
-
+Feature 1 
 ![screenshot2](docs/feature1_day1.png)
-
+Feature 2
 ![screenshot3](docs/feature2_day1.png)
-
+Feature 3
 ![screenshot4](docs/feature3_day1.png)
 
- 
+End of day 1
 ![screenshot5](docs/day1_end.png)
 
 
 #### Screenshots Day 2
+Feature 3
+![screenshot6](docs/feature3_day2.png)
+Feature 4
+![screenshot7](docs/feature4_day2.png)
+End of day 2
+![screenshot8](docs/day2_end.png)
 
 #### Screenshots Day 3
 
