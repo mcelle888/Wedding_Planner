@@ -1,8 +1,9 @@
 import csv 
 import pandas as pd 
 from colorama import Fore, Back, Style
-from weddingcost import WeddingItems, Venue
-
+import emoji
+ 
+ 
 # print((line))
 # print((line2)) 
  
@@ -47,8 +48,7 @@ from weddingcost import WeddingItems, Venue
 #     for row in reader:
 #         print(row)    
 
-
-dataFrame = pd.read_csv('recc.csv')
-print("Data",dataFrame)
-
+# DATAFRAME
+# dataFrame = pd.read_csv('recc.csv')
+# print("Data",dataFrame)
 

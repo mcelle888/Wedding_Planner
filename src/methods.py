@@ -2,6 +2,7 @@ import emoji
 from colorama import Fore, Back, Style
 import datetime 
 
+
 def introduction(): 
     user_name = input("Please enter your name: ")
     wedding_date_y = int(input("Please enter the year of the wedding (yyyy): "))
@@ -24,4 +25,5 @@ def introduction():
         print(emoji.emojize("Thanks for that:grinning_face_with_smiling_eyes: ", variant="emoji_type"))
         print("There are", diff, "days left till the wedding. Let's get planning!")
 
+ 
  

@@ -14,10 +14,7 @@ class WeddingItems:
         print(Style.RESET_ALL)
         if confirm == "y":
             self.name = input(f"Please enter your {self.item_type} name: ") 
-            self.cost = input(f"Please enter your {self.item_type} cost: ")
-        
-           
-            
+            self.cost = input(f"Please enter your {self.item_type} cost: ")            
         elif confirm == "n":
             self.get_recc()
 
@@ -410,7 +407,4 @@ class Ring(WeddingItems):
         elif choice == 'E':
             self.name = "Undecided"
             self.cost = 2500
-
-
-def Calculator():
-    pass
+ 
