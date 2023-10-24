@@ -49,7 +49,7 @@ class Venue(WeddingItems):
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]   
         elif choice == 'E':
-            self.name = "Undecided"
+            self.name = "Undecided*"
             self.cost = 15000
 
  
@@ -82,7 +82,7 @@ class Florist(WeddingItems):
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]             
         elif choice == 'E':
-            self.name = "Undecided"
+            self.name = "Undecided*"
             self.cost = 1500
          
    
@@ -117,7 +117,7 @@ class Food(WeddingItems):
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]             
         elif choice == 'E':
-            self.name = "Undecided"
+            self.name = "Undecided*"
             self.cost = 70 * num_people
       
 
@@ -152,7 +152,7 @@ class Decoration(WeddingItems):
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]       
         elif choice == 'E':
-            self.name = "Undecided"
+            self.name = "Undecided*"
             self.cost = 1800
 
 # BEAUTY SERVICES
@@ -183,7 +183,7 @@ class MakeupHair(WeddingItems):
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]             
         elif choice == 'E':
-            self.name = "Undecided"
+            self.name = "Undecided*"
             self.cost = 800
 
 # PHOTO AND VIDEO
@@ -213,7 +213,7 @@ class PhotoVideo(WeddingItems):
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]             
         elif choice == 'E':
-            self.name = "Undecided"
+            self.name = "Undecided*"
             self.cost = 3500
 
 # CLOTHES
@@ -244,7 +244,7 @@ class Dress(WeddingItems):
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]           
         elif choice == 'E':
-            self.name = "Undecided"
+            self.name = "Undecided*"
             self.cost = 3000
         
 
@@ -275,7 +275,7 @@ class Cake(WeddingItems):
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]              
         elif choice == 'E':
-            self.name = "Undecided"
+            self.name = "Undecided*"
             self.cost = 600
 
 # RING
@@ -306,6 +306,6 @@ class Ring(WeddingItems):
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]        
         elif choice == 'E':
-            self.name = "Undecided"
+            self.name = "Undecided*"
             self.cost = 2500
  

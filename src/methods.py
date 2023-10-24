@@ -36,7 +36,7 @@ def introduction():
             f.write(str(diff))
             f.write(" days until the wedding!")
             f.write('\n \n')
-            f.write("PLAN")
+            f.write("BUDGET PLAN")
 
  
  
