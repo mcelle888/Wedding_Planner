@@ -11,7 +11,7 @@ print(f.renderText('~~~ Congratulations! ~~~'))
 print(emoji.emojize("Congrats on your engagement:red_heart:  Let's get you started on some planning!", variant="emoji_type"))
 
 
-introduction()
+# introduction()
 
 # Venue input
 venue_object = Venue("venue")

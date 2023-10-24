@@ -34,13 +34,43 @@ line2 = linecache.getline("recc.csv",2)
 #    print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price of $`15000 will be used to calculate the final cost estimate)")
      
 
-with open('recc.csv') as f:
-   csv_reader = csv.reader(f)
-   for index, row in enumerate(csv_reader):
-      if index == 1 or index == 2 or index ==3:
-         print("Option", row[0], "is at '", row[1], "' which costs: $",row[2],". It is",row[3])
-print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price of $`15000 will be used to calculate the final cost estimate)")
+# with open('recc.csv') as f:
+#    csv_reader = csv.reader(f)
+#    for index, row in enumerate(csv_reader):
+#       if index == 5 or index == 6 or index ==7:
+#          print("Option", row[0], "is at '", row[1], "' which costs: $",row[2],"pp. They",row[3])
+# print("Option D.  Randomly select one for me! \nOption E.  Leave blank (an average price of $`15000 will be used to calculate the final cost estimate)")
  
 
-   
-        
+ 
+
+num_people = 10 
+choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+if choice == 'A': 
+   with open('recc.csv') as f:
+         csv_reader = csv.reader(f)
+         for index, row in enumerate(csv_reader):
+            if index == 5: 
+               name = row[1]
+               cost = int(row[2]) * num_people 
+elif choice == 'B':
+   with open('recc.csv') as f:
+         csv_reader = csv.reader(f)
+         for index, row in enumerate(csv_reader):
+            if index == 6: 
+               name = row[1]
+               cost = int(row[2]) * num_people 
+elif choice == 'C':
+   with open('recc.csv') as f:
+         csv_reader = csv.reader(f)
+         for index, row in enumerate(csv_reader):
+            if index == 7 : 
+               name = row[1]
+               cost = int(row[2]) * num_people 
+elif choice == 'D':
+   pass
+elif choice == 'E':
+      name = "Undecided"
+      cost = num_people * 90 
+
+print(name, cost)
