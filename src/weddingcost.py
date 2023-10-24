@@ -47,7 +47,8 @@ class Venue(WeddingItems):
         elif choice == 'D':
             number = random.choice([0,1,2])
             self.name = dataFrame.iloc[number,1]
-            self.cost = dataFrame.iloc[number,2]   
+            self.cost = dataFrame.iloc[number,2]  
+            print(Fore.LIGHTGREEN_EX + "You got", self.name, "which costs $ ", self.cost) 
         elif choice == 'E':
             self.name = "Undecided*"
             self.cost = 15000
@@ -163,7 +164,7 @@ class MakeupHair(WeddingItems):
             csv_reader = csv.reader(f)
             for index, row in enumerate(csv_reader):
                 if index == 13 or index == 14 or index == 15:
-                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],"pp. They offer",row[3])
+                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". They offer",row[3])
         print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
         choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
@@ -194,7 +195,7 @@ class PhotoVideo(WeddingItems):
             csv_reader = csv.reader(f)
             for index, row in enumerate(csv_reader):
                 if index == 16 or index == 17 or index == 18:
-                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],"pp. They offer",row[3])
+                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". They offer",row[3])
         print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
         choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
@@ -224,7 +225,7 @@ class Dress(WeddingItems):
             csv_reader = csv.reader(f)
             for index, row in enumerate(csv_reader):
                 if index == 19 or index == 20 or index == 21:
-                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],"pp. They ",row[3])
+                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". They ",row[3])
         print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
         choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
@@ -256,7 +257,7 @@ class Cake(WeddingItems):
             csv_reader = csv.reader(f)
             for index, row in enumerate(csv_reader):
                 if index == 22 or index == 23 or index == 24:
-                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],"pp. They ",row[3])
+                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". They ",row[3])
         print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
         choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
@@ -286,7 +287,7 @@ class Ring(WeddingItems):
             csv_reader = csv.reader(f)
             for index, row in enumerate(csv_reader):
                 if index == 25 or index == 26 or index == 27:
-                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],"pp. They ",row[3])
+                    print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". They ",row[3])
         print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
         choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")

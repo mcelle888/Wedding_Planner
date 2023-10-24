@@ -17,7 +17,7 @@ def introduction():
     diff = (wedding_date-today_date).days
    
     total_budget= int(input("Enter your budget: "))
-    print(Fore.RED + "Name:", user_name, "\nDate:", wedding_date_d , wedding_date_m , wedding_date_y ,"\nTotal Budget:", total_budget)
+    print(Fore.LIGHTMAGENTA_EX + "Name:", user_name, "\nDate:", wedding_date_d , wedding_date_m , wedding_date_y ,"\nTotal Budget:", total_budget)
     print(Style.RESET_ALL)
     # Checks with user if inputs are correct
     confirm = input("Are these details correct? Please type 'y' or 'n': ")
