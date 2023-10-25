@@ -6,9 +6,9 @@ import datetime
 def get_details(): 
     user_name = input("Please enter your name: ")
     
-    wedding_date_y = int(input("Please enter the year of the wedding (yyyy): "))   
-    wedding_date_m = int(input("Please enter the month of the wedding (mm): "))
-    wedding_date_d = int(input("Please enter the day of the wedding (dd): "))
+    wedding_date_y = int(enter_year())   
+    wedding_date_m = int(enter_month())
+    wedding_date_d = int(enter_day())
 
   
     # calculates total days till wedding
@@ -16,7 +16,7 @@ def get_details():
     wedding_date = datetime.date(wedding_date_y, wedding_date_m, wedding_date_d)
     diff = (wedding_date-today_date).days
    
-    total_budget = int(input("Enter your budget: "))
+    total_budget = int(enter_budget())
     print(Fore.LIGHTMAGENTA_EX + "Name:", user_name, "\nDate:", wedding_date_d , wedding_date_m , wedding_date_y ,"\nTotal Budget:", total_budget)
     print(Style.RESET_ALL)
     # Checks with user if inputs are correct
@@ -52,6 +52,75 @@ def get_details():
 
 # Error handling methods
 
+# For entering the date of wedding
+def enter_year():
+    response = None
+    while response is None:
+        response = (input("Please enter the year of the wedding (yyyy): "))  
+        try:
+            if response == int(response):
+                raise ValueError
+            
+            if len(response) != 4:
+                raise ValueError
+            
+            if int(response) < datetime.date.today().year:
+                raise ValueError
+            
+        except ValueError:
+            response = None
+            print(Fore.RED + "Invalid input, please enter a 4 digit number for a future date")
+            print(Style.RESET_ALL)
+    return response
+
+def enter_month():
+    response = None
+    while response is None:
+        response = (input("Please enter the month of the wedding (mm): "))
+        try:
+            if response == int(response):
+               raise ValueError
+            
+            if int(response) > 12 or int(response) < 1:
+                raise ValueError     
+        except ValueError:
+            response = None
+            print(Fore.RED + "Invalid input, please enter a number between 1 and 12")
+            print(Style.RESET_ALL)
+    return response
+
+def enter_day():
+    response = None
+    while response is None:
+        response = (input("Please enter the day of the wedding (dd): "))
+        try:
+            if response == int(response):
+               raise ValueError
+            
+            if int(response) > 31 or int(response) < 1:
+                raise ValueError     
+        except ValueError:
+            response = None
+            print(Fore.RED + "Invalid input, please enter a number value for the day")
+            print(Style.RESET_ALL)
+    return response
+
+
+
+# For entering budget
+def enter_budget():
+    response = None
+    while response is None:
+        response = input("Please enter your budget: ") 
+        try:
+            response = int(response)
+        except ValueError:
+            response = None
+            print(Fore.RED + "Invalid input, please enter a number for your budget")
+            print(Style.RESET_ALL)
+    return response
+         
+# For confirming information entered 
 def confirm_yesno():
     response = None   
     while response is None:     
@@ -65,20 +134,7 @@ def confirm_yesno():
             print(Style.RESET_ALL)
     return response
 
-
-def confirm_choice():
-    choice = None   
-    while choice is None:     
-        try: 
-            choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ").upper()
-            if  choice !='A' and choice !='B' and choice !='C' and choice !='D' and choice !='E':
-                raise ValueError      
-        except ValueError:
-            choice = None
-            print(Fore.RED + "Invalid input, please type 'A' or 'B' or 'C' or 'D' or 'E'")
-            print(Style.RESET_ALL)
-    return choice
-
+# Asking if they have a wedding item or not
 def confirm_wedding_item(item_type):
     response = None   
     while response is None:     
@@ -93,6 +149,7 @@ def confirm_wedding_item(item_type):
     return response
 
 
+# Confirming costs of self input
 def confirm_cost(item_type):
     response = None
     while response is None:
@@ -104,4 +161,21 @@ def confirm_cost(item_type):
             print(Fore.RED + "Invalid input, please enter a number for the cost")
             print(Style.RESET_ALL)
     return response
-             
+
+# For multiple choice reccommendations 
+def confirm_choice():
+    choice = None   
+    while choice is None:     
+        try: 
+            choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ").upper()
+            if  choice !='A' and choice !='B' and choice !='C' and choice !='D' and choice !='E':
+                raise ValueError      
+        except ValueError:
+            choice = None
+            print(Fore.RED + "Invalid input, please type 'A' or 'B' or 'C' or 'D' or 'E'")
+            print(Style.RESET_ALL)
+    return choice
+
+
+
+

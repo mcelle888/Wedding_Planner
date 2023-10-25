@@ -132,65 +132,106 @@ import emoji
 #     print("try again")
  
 
-def confirm_yesno():
-    response = None   
-    while response is None:     
-        try: 
-            response = input("Are these details correct? Please type 'y' or 'n': ") 
-            if  response !='y' and response !='n':
-                raise ValueError      
-        except ValueError:
-            response = None
-            print("try again")
-    return response
+# def confirm_yesno():
+#     response = None   
+#     while response is None:     
+#         try: 
+#             response = input("Are these details correct? Please type 'y' or 'n': ") 
+#             if  response !='y' and response !='n':
+#                 raise ValueError      
+#         except ValueError:
+#             response = None
+#             print("try again")
+#     return response
 
  
-# confirm_yesno()
-#print(confirm_yesno())
+# # confirm_yesno()
+# #print(confirm_yesno())
 
 
 
 
 
 
-class WeddingItems:
-    name = None
-    cost = None
-    def __init__(self,item_type):
-        self.item_type = item_type
-    def ask_user(self):
-        confirm = confirm_wedding_item (self.item_type)
-        print(Style.RESET_ALL)
-        if confirm == "y":
-            self.name = input(f"Please enter your {self.item_type} name: ") 
-            self.cost = confirm_cost(self.item_type)          
-        elif confirm == "n":
-            self.get_recc()
+# class WeddingItems:
+#     name = None
+#     cost = None
+#     def __init__(self,item_type):
+#         self.item_type = item_type
+#     def ask_user(self):
+#         confirm = confirm_wedding_item (self.item_type)
+#         print(Style.RESET_ALL)
+#         if confirm == "y":
+#             self.name = input(f"Please enter your {self.item_type} name: ") 
+#             self.cost = confirm_cost(self.item_type)          
+#         elif confirm == "n":
+#             self.get_recc()
 
-def confirm_wedding_item(item_type):
-    response = None   
-    while response is None:     
-        try: 
-            response = input(Fore.RED + f"Have you chosen a {item_type}? Please enter 'y' or 'n' ")
-            if  response !='y' and response !='n':
-                raise ValueError      
-        except ValueError:
-            response = None
-            print("Please enter 'y' or 'n' ")
-    return response
+# def confirm_wedding_item(item_type):
+#     response = None   
+#     while response is None:     
+#         try: 
+#             response = input(Fore.RED + f"Have you chosen a {item_type}? Please enter 'y' or 'n' ")
+#             if  response !='y' and response !='n':
+#                 raise ValueError      
+#         except ValueError:
+#             response = None
+#             print("Please enter 'y' or 'n' ")
+#     return response
 
 
-def confirm_cost(item_type):
+# def confirm_cost(item_type):
+#     response = None
+#     while response is None:
+       
+#         try:
+#             response = input(f"Please enter your {item_type} cost: ") 
+#             response = int(response)
+#         except ValueError:
+#             response = None
+#             print("wrong")
+#     return response
+
+# newitem = WeddingItems("venue")
+# newitem.ask_user()
+
+
+# def enter_budget():
+#     response = None
+#     while response is None:
+#         response = input("Please enter your budget: ") 
+#         try:
+#             response = int(response)
+#         except ValueError:
+#             response = None
+#             print(Fore.RED + "Invalid input, please enter a number for your budget")
+#             print(Style.RESET_ALL)
+#     return response
+import datetime
+
+def enter_day():
     response = None
     while response is None:
-       
+        response = (input("Please enter the day of the wedding (dd): "))
         try:
-            response = input(f"Please enter your {item_type} cost: ") 
-            response = int(response)
+            if response == int(response):
+               raise ValueError
+            
+            if int(response) > 31 or int(response) < 1:
+                raise ValueError     
         except ValueError:
             response = None
-            print("wrong")
+            print(Fore.RED + "Invalid input, please enter a number value for the day")
+            print(Style.RESET_ALL)
     return response
+     
+print(enter_day())
+# wedding_date_y = int(input("Please enter the year of the wedding (yyyy): "))   
+# wedding_date_m = int(input("Please enter the month of the wedding (mm): "))
+# wedding_date_d = int(input("Please enter the day of the wedding (dd): "))
 
-newitem = WeddingItems("venue")
-newitem.ask_user()
+
+# calculates total days till wedding
+# today_date = datetime.date.today()
+# wedding_date = datetime.date(wedding_date_y, wedding_date_m, wedding_date_d)
+# diff = (wedding_date-today_date).days
