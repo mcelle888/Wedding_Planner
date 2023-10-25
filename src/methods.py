@@ -48,7 +48,6 @@ def get_details():
     return total_budget
 
 
- 
 
 # Error handling methods
 
