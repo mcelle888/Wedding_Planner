@@ -1,21 +1,8 @@
 import emoji
-from colorama import Fore, Back, Style
+from colorama import Fore, Style
 import datetime 
 
-def confirm_yesno():
-    response = None   
-    while response is None:     
-        try: 
-            response = input(" Please type 'y' or 'n': ").lower() 
-            if  response !='y' and response !='n':
-                raise ValueError      
-        except ValueError:
-            response = None
-            print("try again")
-    return response
-   
  
-
 def get_details(): 
     user_name = input("Please enter your name: ")
     
@@ -46,18 +33,38 @@ def get_details():
 
         # Printing to the end wedding plan text file
         with open('weddingplan.txt', 'w') as f:
-            f.write("Name:")
+            f.write("Name: ")
             f.write(user_name)
             f.write("\nDate of Wedding: ")
             f.write(str(wedding_date))
             f.write('\n')
             f.write(str(diff))
             f.write(" days until the wedding!")
+            f.write('\n')
+            f.write("Budget: ")
+            f.write(str(total_budget))
             f.write('\n \n')
             f.write("BUDGET PLAN")
     return total_budget
 
- 
+
+
+# Error handling methods
+
+def confirm_yesno():
+    response = None   
+    while response is None:     
+        try: 
+            response = input(" Please type 'y' or 'n': ").lower() 
+            if  response !='y' and response !='n':
+                raise ValueError      
+        except ValueError:
+            response = None
+            print(Fore.RED+"Invalid input, please try again with 'y' or 'n' ")
+            print(Style.RESET_ALL)
+    return response
+
+
 def confirm_choice():
     choice = None   
     while choice is None:     
@@ -67,5 +74,33 @@ def confirm_choice():
                 raise ValueError      
         except ValueError:
             choice = None
-            print("Invalid input, please type 'A' or 'B' or 'C' or 'D' or 'E'")
+            print(Fore.RED + "Invalid input, please type 'A' or 'B' or 'C' or 'D' or 'E'")
+            print(Style.RESET_ALL)
     return choice
+
+def confirm_wedding_item(item_type):
+    response = None   
+    while response is None:     
+        try: 
+            response = input(Fore.LIGHTMAGENTA_EX + f"Have you chosen a {item_type}? Please enter 'y' or 'n' ").lower()
+            if  response !='y' and response !='n':
+                raise ValueError      
+        except ValueError:
+            response = None
+            print(Fore.RED + "Invalid input, please enter 'y' or 'n' ")
+            print(Style.RESET_ALL)
+    return response
+
+
+def confirm_cost(item_type):
+    response = None
+    while response is None:
+        response = input(f"Please enter your {item_type} cost: ") 
+        try:
+            response = int(response)
+        except ValueError:
+            response = None
+            print(Fore.RED + "Invalid input, please enter a number for the cost")
+            print(Style.RESET_ALL)
+    return response
+             

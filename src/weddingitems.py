@@ -3,72 +3,7 @@ import csv
 import pandas as pd
 import random 
 import emoji 
-from methods import confirm_choice
-
-# class WeddingItems:
-#     name = None
-#     cost = None
-#     def __init__(self,item_type):
-#         self.item_type = item_type
-#     def ask_user(self):
-#         confirm = input(Fore.RED + f"Have you chosen a {self.item_type}? Please enter 'y' or 'n' ")
-#         print(Style.RESET_ALL)
-#         if confirm == "y":
-#             self.name = input(f"Please enter your {self.item_type} name: ") 
-#             self.cost = input(f"Please enter your {self.item_type} cost: ")            
-#         elif confirm == "n":
-#             self.get_recc()
-
-# class WeddingItems:
-#     name = None
-#     cost = None
-#     def __init__(self,item_type):
-#         self.item_type = item_type
-#     def ask_user(self):
-#         response = None   
-#         while response is None:     
-#             try: 
-#                 response = input(Fore.RED + f"Have you chosen a {self.item_type}? Please enter 'y' or 'n' ")
-#                 print(Style.RESET_ALL)
-#                 if  response !='y' and response !='n':
-#                     raise ValueError      
-#             except ValueError:
-#                 response = None
-#             print("try again")
-#             print(response)
-#             return response
-#         if response == "y":
-#             self.name = input(f"Please enter your {self.item_type} name: ") 
-#             self.cost = input(f"Please enter your {self.item_type} cost: ")            
-#         elif response == "n":
-#             self.get_recc()
-
-# class WeddingItems:
-#     name = None
-#     cost = None
-#     def __init__(self,item_type):
-#         self.item_type = item_type
-#     def ask_user(self):
-#         confirm = confirm_wedding_item (self.item_type)
-#         print(Style.RESET_ALL)
-#         if confirm == "y":
-#             self.name = input(f"Please enter your {self.item_type} name: ") 
-#             self.cost = input(f"Please enter your {self.item_type} cost: ")            
-#         elif confirm == "n":
-#             self.get_recc()
-
-# def confirm_wedding_item(item_type):
-#     response = None   
-#     while response is None:     
-#         try: 
-#             response = input(Fore.RED + f"Have you chosen a {item_type}? Please enter 'y' or 'n' ")
-#             if  response !='y' and response !='n':
-#                 raise ValueError      
-#         except ValueError:
-#             response = None
-#             print("try again")
-#     return response
-
+from methods import confirm_choice, confirm_wedding_item, confirm_cost
 
 class WeddingItems:
     name = None
@@ -84,30 +19,6 @@ class WeddingItems:
         elif confirm == "n":
             self.get_recc()
 
-def confirm_wedding_item(item_type):
-    response = None   
-    while response is None:     
-        try: 
-            response = input(Fore.RED + f"Have you chosen a {item_type}? Please enter 'y' or 'n' ")
-            if  response !='y' and response !='n':
-                raise ValueError      
-        except ValueError:
-            response = None
-            print("Please enter 'y' or 'n' ")
-    return response
-
-
-def confirm_cost(item_type):
-    response = None
-    while response is None:
-        response = input(f"Please enter your {item_type} cost: ") 
-        try:
-            response = int(response)
-        except ValueError:
-            response = None
-            print("wrong")
-    return response
-             
     
 # Instances of Wedding Items 
 

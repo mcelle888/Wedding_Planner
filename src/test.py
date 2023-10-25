@@ -183,8 +183,9 @@ def confirm_wedding_item(item_type):
 def confirm_cost(item_type):
     response = None
     while response is None:
-        response = input(f"Please enter your {item_type} cost: ") 
+       
         try:
+            response = input(f"Please enter your {item_type} cost: ") 
             response = int(response)
         except ValueError:
             response = None

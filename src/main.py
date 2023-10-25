@@ -3,14 +3,15 @@ import emoji
 from colorama import Fore, Back, Style
 import datetime 
 from methods import get_details
-from weddingcost import WeddingItems, Venue, Florist, Food, Decoration, MakeupHair, PhotoVideo, Dress, Cake, Ring 
+from weddingitems import WeddingItems, Venue, Florist, Food, Decoration, MakeupHair, PhotoVideo, Dress, Cake, Ring 
 
-# Opening App
+# Opening App (Intro)
 f = Figlet(font='contessa')
 print(f.renderText('~~~ Congratulations! ~~~'))
 print(emoji.emojize("Congrats on your engagement:red_heart:  Let's get you started on some planning!", variant="emoji_type"))
 
-# budget = get_details()
+# Get basic user's basic information
+budget = get_details()
 
 # Venue input
 venue_object = Venue("venue")
@@ -119,8 +120,12 @@ with open('weddingplan.txt', 'a') as f:
     f.write("\n\n")
 
 print(Style.RESET_ALL)
+
+# Ending message
 print(emoji.emojize("All done! Thank you for that :smiling_face_with_smiling_eyes:", variant="emoji_type"))
 print(emoji.emojize("Now let's print out a plan for you :party_popper:", variant="emoji_type"))
+
+# Budget Calculator for wedding plan
 
 totalcost = int(venue_object.cost) + int(florist_object.cost) + int(food_object.cost)+ int(decoration_object.cost) + int(makeup_hair_object.cost)+ int(photo_video_object.cost) + int(dress_object.cost) + int(cake_object.cost) + int(ring_object.cost) 
 print(totalcost) 

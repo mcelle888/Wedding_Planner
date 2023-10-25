@@ -1,12 +1,41 @@
-Name:nichele
+Name: MICHELLE
 Date of Wedding: 2024-10-02
 343 days until the wedding!
+Budget: 20000
  
 BUDGET PLAN
-Venue Name: michelle
-Venue Cost: $2000
+Venue Name: LuxeCraves
+Venue Cost: $10000
 
 
-Florist Name: Bloom
-Florist Cost: $2000
+Florist Name: FlowersbySam
+Florist Cost: $1000
+
+
+Caterer Name: Nibble
+Caterer Cost: $101000
+
+
+Decor Name: Festiva
+Decor Cost: $1500
+
+
+Beauty Service Name: Jesse'sBeauty
+Beauty Service Cost: $500
+
+
+Photographer and Videographer Name: Capture
+Photographer and Videographer Cost: $3500
+
+
+Dress Shop Name: Simple
+Dress Cost: $2000
+
+
+Cake Shop Name: Katie'sBaking
+Cake Cost: $350
+
+
+Ring Shop Name: Charm
+Ring Cost: $1000
 
