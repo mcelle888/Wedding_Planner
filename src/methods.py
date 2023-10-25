@@ -18,7 +18,7 @@ def confirm_yesno():
 # confirm_yesno()
 
 
-def introduction(): 
+def get_details(): 
     user_name = input("Please enter your name: ")
     
     wedding_date_y = int(input("Please enter the year of the wedding (yyyy): "))   
@@ -39,10 +39,13 @@ def introduction():
     answer = confirm_yesno()
     if answer == "n":
         print("Okay, let's try again")
-        introduction() 
+        get_details() 
     elif answer == "y": 
         print(emoji.emojize("Thanks for that:grinning_face_with_smiling_eyes: ", variant="emoji_type"))
         print("There are", diff, "days left till the wedding. Let's get planning!")
+
+
+
         # Printing to the end wedding plan text file
         with open('weddingplan.txt', 'w') as f:
             f.write("Name:")
@@ -54,7 +57,7 @@ def introduction():
             f.write(" days until the wedding!")
             f.write('\n \n')
             f.write("BUDGET PLAN")
-    
+    return total_budget
 
  
  

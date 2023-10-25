@@ -2,7 +2,7 @@ from pyfiglet import Figlet
 import emoji
 from colorama import Fore, Back, Style
 import datetime 
-from methods import introduction
+from methods import get_details
 from weddingcost import WeddingItems, Venue, Florist, Food, Decoration, MakeupHair, PhotoVideo, Dress, Cake, Ring 
 
 # Opening App
@@ -10,8 +10,7 @@ f = Figlet(font='contessa')
 print(f.renderText('~~~ Congratulations! ~~~'))
 print(emoji.emojize("Congrats on your engagement:red_heart:  Let's get you started on some planning!", variant="emoji_type"))
 
-
-introduction()
+budget = get_details()
 
 # Venue input
 venue_object = Venue("venue")
@@ -126,7 +125,7 @@ print(emoji.emojize("Now let's print out a plan for you :party_popper:", variant
 totalcost = int(venue_object.cost) + int(florist_object.cost) + int(food_object.cost)+ int(decoration_object.cost) + int(makeup_hair_object.cost)+ int(photo_video_object.cost) + int(dress_object.cost) + int(cake_object.cost) + int(ring_object.cost) 
 print(totalcost) 
 
-# if totalcost >= total_budget:
-#     print("You are within your budget! You have excess", 100, "to spend!")
-# else:
-#     print("You are over your budget! You need to cut", 100, "out!")
+if totalcost >= budget:
+    print("You are within your budget! You have excess", 100, "to spend!")
+else:
+    print("You are over your budget! You need to cut", 100, "out!")
