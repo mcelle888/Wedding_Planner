@@ -3,6 +3,72 @@ import csv
 import pandas as pd
 import random 
 import emoji 
+from methods import confirm_choice
+
+# class WeddingItems:
+#     name = None
+#     cost = None
+#     def __init__(self,item_type):
+#         self.item_type = item_type
+#     def ask_user(self):
+#         confirm = input(Fore.RED + f"Have you chosen a {self.item_type}? Please enter 'y' or 'n' ")
+#         print(Style.RESET_ALL)
+#         if confirm == "y":
+#             self.name = input(f"Please enter your {self.item_type} name: ") 
+#             self.cost = input(f"Please enter your {self.item_type} cost: ")            
+#         elif confirm == "n":
+#             self.get_recc()
+
+# class WeddingItems:
+#     name = None
+#     cost = None
+#     def __init__(self,item_type):
+#         self.item_type = item_type
+#     def ask_user(self):
+#         response = None   
+#         while response is None:     
+#             try: 
+#                 response = input(Fore.RED + f"Have you chosen a {self.item_type}? Please enter 'y' or 'n' ")
+#                 print(Style.RESET_ALL)
+#                 if  response !='y' and response !='n':
+#                     raise ValueError      
+#             except ValueError:
+#                 response = None
+#             print("try again")
+#             print(response)
+#             return response
+#         if response == "y":
+#             self.name = input(f"Please enter your {self.item_type} name: ") 
+#             self.cost = input(f"Please enter your {self.item_type} cost: ")            
+#         elif response == "n":
+#             self.get_recc()
+
+# class WeddingItems:
+#     name = None
+#     cost = None
+#     def __init__(self,item_type):
+#         self.item_type = item_type
+#     def ask_user(self):
+#         confirm = confirm_wedding_item (self.item_type)
+#         print(Style.RESET_ALL)
+#         if confirm == "y":
+#             self.name = input(f"Please enter your {self.item_type} name: ") 
+#             self.cost = input(f"Please enter your {self.item_type} cost: ")            
+#         elif confirm == "n":
+#             self.get_recc()
+
+# def confirm_wedding_item(item_type):
+#     response = None   
+#     while response is None:     
+#         try: 
+#             response = input(Fore.RED + f"Have you chosen a {item_type}? Please enter 'y' or 'n' ")
+#             if  response !='y' and response !='n':
+#                 raise ValueError      
+#         except ValueError:
+#             response = None
+#             print("try again")
+#     return response
+
 
 class WeddingItems:
     name = None
@@ -10,14 +76,39 @@ class WeddingItems:
     def __init__(self,item_type):
         self.item_type = item_type
     def ask_user(self):
-        confirm = input(Fore.RED + f"Have you chosen a {self.item_type}? Please enter 'y' or 'n' ")
+        confirm = confirm_wedding_item (self.item_type)
         print(Style.RESET_ALL)
         if confirm == "y":
             self.name = input(f"Please enter your {self.item_type} name: ") 
-            self.cost = input(f"Please enter your {self.item_type} cost: ")            
+            self.cost = confirm_cost(self.item_type)          
         elif confirm == "n":
             self.get_recc()
 
+def confirm_wedding_item(item_type):
+    response = None   
+    while response is None:     
+        try: 
+            response = input(Fore.RED + f"Have you chosen a {item_type}? Please enter 'y' or 'n' ")
+            if  response !='y' and response !='n':
+                raise ValueError      
+        except ValueError:
+            response = None
+            print("Please enter 'y' or 'n' ")
+    return response
+
+
+def confirm_cost(item_type):
+    response = None
+    while response is None:
+        response = input(f"Please enter your {item_type} cost: ") 
+        try:
+            response = int(response)
+        except ValueError:
+            response = None
+            print("wrong")
+    return response
+             
+    
 # Instances of Wedding Items 
 
 # VENUE
@@ -32,24 +123,24 @@ class Venue(WeddingItems):
                     print(Fore.BLUE+ "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". It is",row[3])
         print("Option D.  Randomly select one for me! \nOption E.  Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
-        choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        option = confirm_choice()    
         dataFrame = pd.read_csv('recc.csv')
-        if choice == 'A': 
+        if option == 'A': 
                      self.name = dataFrame.iloc[0,1]
                      self.cost = dataFrame.iloc[0,2]
                     
-        elif choice == 'B':
+        elif option == 'B':
                      self.name = dataFrame.iloc[1,1]
                      self.cost = dataFrame.iloc[1,2]
-        elif choice == 'C':
+        elif option == 'C':
                      self.name = dataFrame.iloc[2,1]
                      self.cost = dataFrame.iloc[2,2]
-        elif choice == 'D':
+        elif option == 'D':
             number = random.choice([0,1,2])
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]  
             print(Fore.LIGHTGREEN_EX + "You got", self.name, "which costs $ ", self.cost) 
-        elif choice == 'E':
+        elif option == 'E':
             self.name = "Undecided*"
             self.cost = 15000
 
@@ -66,23 +157,23 @@ class Florist(WeddingItems):
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". They offer a ",row[3])
         print("Option D.  Randomly select one for me! \nOption E.  Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
-        choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        option = confirm_choice() 
         dataFrame = pd.read_csv('recc.csv')
-        if choice == 'A': 
+        if option == 'A': 
                      self.name = dataFrame.iloc[6,1]
                      self.cost = dataFrame.iloc[6,2]
                     
-        elif choice == 'B':
+        elif option == 'B':
                      self.name = dataFrame.iloc[7,1]
                      self.cost = dataFrame.iloc[7,2]
-        elif choice == 'C':
+        elif option == 'C':
                      self.name = dataFrame.iloc[8,1]
                      self.cost = dataFrame.iloc[8,2]
-        elif choice == 'D':
+        elif option == 'D':
             number = random.choice([0,1,2])
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]             
-        elif choice == 'E':
+        elif option == 'E':
             self.name = "Undecided*"
             self.cost = 1500
          
@@ -101,23 +192,23 @@ class Food(WeddingItems):
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],"pp. They",row[3])
         print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
-        choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        option = confirm_choice() 
         dataFrame = pd.read_csv('recc.csv')
-        if choice == 'A': 
+        if option == 'A': 
                      self.name = dataFrame.iloc[3,1]
                      self.cost = int(dataFrame.iloc[3,2]) * num_people 
                     
-        elif choice == 'B':
+        elif option == 'B':
                      self.name = dataFrame.iloc[4,1]
                      self.cost = int(dataFrame.iloc[4,2]) * num_people 
-        elif choice == 'C':
+        elif option == 'C':
                      self.name = dataFrame.iloc[5,1]
                      self.cost = int(dataFrame.iloc[5,2]) *num_people   
-        elif choice == 'D':
+        elif option == 'D':
             number = random.choice([0,1,2])
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]             
-        elif choice == 'E':
+        elif option == 'E':
             self.name = "Undecided*"
             self.cost = 70 * num_people
       
@@ -134,25 +225,25 @@ class Decoration(WeddingItems):
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". They",row[3])
         print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
-        choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        option = confirm_choice() 
         dataFrame = pd.read_csv('recc.csv')
-        if choice == 'A': 
+        if option == 'A': 
                      self.name = dataFrame.iloc[9,1]
                      self.cost = dataFrame.iloc[9,2]
                     
-        elif choice == 'B':
+        elif option == 'B':
                      self.name = dataFrame.iloc[10,1]
                      self.cost = dataFrame.iloc[10,2]
-        elif choice == 'C':
+        elif option == 'C':
                      self.name = dataFrame.iloc[11,1]
                      self.cost = dataFrame.iloc[11,2]
-        elif choice == 'D':
+        elif option == 'D':
             multi = ['A', 'B', 'C']
             number = random.choice(multi)
             number = random.choice([0,1,2])
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]       
-        elif choice == 'E':
+        elif option == 'E':
             self.name = "Undecided*"
             self.cost = 1800
 
@@ -167,23 +258,23 @@ class MakeupHair(WeddingItems):
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". They offer",row[3])
         print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
-        choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        option = confirm_choice() 
         dataFrame = pd.read_csv('recc.csv')
-        if choice == 'A': 
+        if option == 'A': 
                      self.name = dataFrame.iloc[12,1]
                      self.cost = dataFrame.iloc[12,2]
                     
-        elif choice == 'B':
+        elif option == 'B':
                      self.name = dataFrame.iloc[13,1]
                      self.cost = dataFrame.iloc[13,2]
-        elif choice == 'C':
+        elif option == 'C':
                      self.name = dataFrame.iloc[14,1]
                      self.cost = dataFrame.iloc[14,2]
-        elif choice == 'D':
+        elif option == 'D':
             number = random.choice([0,1,2])
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]             
-        elif choice == 'E':
+        elif option == 'E':
             self.name = "Undecided*"
             self.cost = 800
 
@@ -198,22 +289,22 @@ class PhotoVideo(WeddingItems):
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". They offer",row[3])
         print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
-        choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        option = confirm_choice() 
         dataFrame = pd.read_csv('recc.csv')
-        if choice == 'A': 
+        if option == 'A': 
                      self.name = dataFrame.iloc[15,1]
                      self.cost = dataFrame.iloc[15,2]             
-        elif choice == 'B':
+        elif option == 'B':
                      self.name = dataFrame.iloc[16,1]
                      self.cost = dataFrame.iloc[16,2]
-        elif choice == 'C':
+        elif option == 'C':
                      self.name = dataFrame.iloc[17,1]
                      self.cost = dataFrame.iloc[17,2]
-        elif choice == 'D':
+        elif option == 'D':
             number = random.choice([0,1,2])
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]             
-        elif choice == 'E':
+        elif option == 'E':
             self.name = "Undecided*"
             self.cost = 3500
 
@@ -228,23 +319,23 @@ class Dress(WeddingItems):
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". They ",row[3])
         print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
-        choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        option = confirm_choice() 
         dataFrame = pd.read_csv('recc.csv')
-        if choice == 'A': 
+        if option == 'A': 
                      self.name = dataFrame.iloc[18,1]
                      self.cost = dataFrame.iloc[18,2]
                     
-        elif choice == 'B':
+        elif option == 'B':
                      self.name = dataFrame.iloc[19,1]
                      self.cost = dataFrame.iloc[19,2]
-        elif choice == 'C':
+        elif option == 'C':
                      self.name = dataFrame.iloc[20,1]
                      self.cost = dataFrame.iloc[20,2]
-        elif choice == 'D':
+        elif option == 'D':
             number = random.choice([0,1,2])
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]           
-        elif choice == 'E':
+        elif option == 'E':
             self.name = "Undecided*"
             self.cost = 3000
         
@@ -260,22 +351,22 @@ class Cake(WeddingItems):
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". They ",row[3])
         print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
-        choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        option = confirm_choice() 
         dataFrame = pd.read_csv('recc.csv')
-        if choice == 'A': 
+        if option == 'A': 
                      self.name = dataFrame.iloc[21,1]
                      self.cost = dataFrame.iloc[21,2]                   
-        elif choice == 'B':
+        elif option == 'B':
                      self.name = dataFrame.iloc[22,1]
                      self.cost = dataFrame.iloc[22,2]
-        elif choice == 'C':
+        elif option == 'C':
                      self.name = dataFrame.iloc[23,1]
                      self.cost = dataFrame.iloc[23,2]
-        elif choice == 'D':
+        elif option == 'D':
             number = random.choice([0,1,2])
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]              
-        elif choice == 'E':
+        elif option == 'E':
             self.name = "Undecided*"
             self.cost = 600
 
@@ -290,23 +381,23 @@ class Ring(WeddingItems):
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1], "' which costs: $",row[2],". They ",row[3])
         print("Option D. Randomly select one for me! \nOption E. Leave blank (an average price will be used to calculate the final cost estimate)")
         print(Style.RESET_ALL)
-        choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ")
+        option = confirm_choice() 
         dataFrame = pd.read_csv('recc.csv')
-        if choice == 'A': 
+        if option == 'A': 
                      self.name = dataFrame.iloc[24,1]
                      self.cost = dataFrame.iloc[24,2]
                     
-        elif choice == 'B':
+        elif option == 'B':
                      self.name = dataFrame.iloc[25,1]
                      self.cost = dataFrame.iloc[25,2]
-        elif choice == 'C':
+        elif option == 'C':
                      self.name = dataFrame.iloc[26,1]
                      self.cost = dataFrame.iloc[26,2]
-        elif choice == 'D':
+        elif option == 'D':
             number = random.choice([0,1,2])
             self.name = dataFrame.iloc[number,1]
             self.cost = dataFrame.iloc[number,2]        
-        elif choice == 'E':
+        elif option == 'E':
             self.name = "Undecided*"
             self.cost = 2500
  

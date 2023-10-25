@@ -10,7 +10,7 @@ f = Figlet(font='contessa')
 print(f.renderText('~~~ Congratulations! ~~~'))
 print(emoji.emojize("Congrats on your engagement:red_heart:  Let's get you started on some planning!", variant="emoji_type"))
 
-budget = get_details()
+# budget = get_details()
 
 # Venue input
 venue_object = Venue("venue")

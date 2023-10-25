@@ -146,4 +146,50 @@ def confirm_yesno():
 
  
 # confirm_yesno()
-print(confirm_yesno())
+#print(confirm_yesno())
+
+
+
+
+
+
+class WeddingItems:
+    name = None
+    cost = None
+    def __init__(self,item_type):
+        self.item_type = item_type
+    def ask_user(self):
+        confirm = confirm_wedding_item (self.item_type)
+        print(Style.RESET_ALL)
+        if confirm == "y":
+            self.name = input(f"Please enter your {self.item_type} name: ") 
+            self.cost = confirm_cost(self.item_type)          
+        elif confirm == "n":
+            self.get_recc()
+
+def confirm_wedding_item(item_type):
+    response = None   
+    while response is None:     
+        try: 
+            response = input(Fore.RED + f"Have you chosen a {item_type}? Please enter 'y' or 'n' ")
+            if  response !='y' and response !='n':
+                raise ValueError      
+        except ValueError:
+            response = None
+            print("Please enter 'y' or 'n' ")
+    return response
+
+
+def confirm_cost(item_type):
+    response = None
+    while response is None:
+        response = input(f"Please enter your {item_type} cost: ") 
+        try:
+            response = int(response)
+        except ValueError:
+            response = None
+            print("wrong")
+    return response
+
+newitem = WeddingItems("venue")
+newitem.ask_user()

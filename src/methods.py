@@ -6,7 +6,7 @@ def confirm_yesno():
     response = None   
     while response is None:     
         try: 
-            response = input(" Please type 'y' or 'n': ") 
+            response = input(" Please type 'y' or 'n': ").lower() 
             if  response !='y' and response !='n':
                 raise ValueError      
         except ValueError:
@@ -15,8 +15,6 @@ def confirm_yesno():
     return response
    
  
-# confirm_yesno()
-
 
 def get_details(): 
     user_name = input("Please enter your name: ")
@@ -60,4 +58,14 @@ def get_details():
     return total_budget
 
  
- 
+def confirm_choice():
+    choice = None   
+    while choice is None:     
+        try: 
+            choice = input("Please enter 'A' or 'B' or 'C' or 'D' or 'E': ").upper()
+            if  choice !='A' and choice !='B' and choice !='C' and choice !='D' and choice !='E':
+                raise ValueError      
+        except ValueError:
+            choice = None
+            print("Invalid input, please type 'A' or 'B' or 'C' or 'D' or 'E'")
+    return choice
