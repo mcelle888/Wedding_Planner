@@ -1,7 +1,7 @@
 import emoji
 from colorama import Fore, Style
 import datetime 
-
+ 
  
 def get_details(): 
     user_name = input("Please enter your name: ")
@@ -48,6 +48,7 @@ def get_details():
     return total_budget
 
 
+ 
 
 # Error handling methods
 

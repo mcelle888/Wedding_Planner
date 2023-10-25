@@ -118,6 +118,8 @@ with open('weddingplan.txt', 'a') as f:
     f.write("\nRing Cost: $")
     f.write(str(ring_object.cost))
     f.write("\n\n")
+    f.write("BUDGET")
+    f.write("\n\n")
 
 print(Style.RESET_ALL)
 
@@ -129,8 +131,26 @@ print(emoji.emojize("Now let's print out a plan for you :party_popper:", variant
 
 totalcost = int(venue_object.cost) + int(florist_object.cost) + int(food_object.cost)+ int(decoration_object.cost) + int(makeup_hair_object.cost)+ int(photo_video_object.cost) + int(dress_object.cost) + int(cake_object.cost) + int(ring_object.cost) 
 print(totalcost) 
-
 if totalcost <= budget:
-    print("You are within your budget! You have excess $ ", (budget - totalcost), "to spend!")
+    with open('weddingplan.txt', 'a') as f:
+        f.write("Your total budget was: $ ")
+        f.write(str(budget))
+        f.write("\n")
+        f.write("Your total estimated cost comes to: $ ")
+        f.write(str(totalcost))
+        f.write("\n")
+        f.write("You are within your budget! You have excess $ ")
+        f.write(str((budget - totalcost)))
+        f.write(" to spend!")
 else:
-    print("You are over your budget! You need to cut $", (totalcost - budget), "out!")
+    with open('weddingplan.txt', 'a') as f:
+        f.write("Your total budget was: $ ")
+        f.write(str(budget))
+        f.write("\n")
+        f.write("Your total estimated cost comes to: $ ")
+        f.write(str(totalcost))
+        f.write("\n")
+        f.write("You are over your budget! You need to cut $ ")
+        f.write(str((totalcost - budget)))
+        f.write(" out!")
+   
