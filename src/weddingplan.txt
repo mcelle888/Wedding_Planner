@@ -1,7 +1,7 @@
-Name: Michelle
+Name: michelle
 Date of Wedding: 2024-10-02
-343 days until the wedding!
-Budget: 45000
+342 days until the wedding!
+Budget: 200000
  
 BUDGET PLAN
 Venue Name: LuxeCraves
@@ -39,4 +39,8 @@ Cake Cost: $350
 Ring Shop Name: Charm
 Ring Cost: $1000
 
-You are within your budget! You have excess $ 20150to spend!
+BUDGET
+
+Your total budget was: $ 200000
+Your total estimated cost comes to: $ 24850
+You are within your budget! You have excess $ 175150 to spend!

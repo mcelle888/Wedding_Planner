@@ -3,7 +3,7 @@ import csv
 import pandas as pd
 import random 
 import emoji 
-from methods import confirm_choice, confirm_wedding_item, confirm_cost
+from methods import confirm_choice, confirm_wedding_item, confirm_cost, guestcount
 
 class WeddingItems:
     name = None
@@ -94,7 +94,7 @@ class Florist(WeddingItems):
 # CATERING
 class Food(WeddingItems):
     def get_recc(self):
-        num_people = int(input('How many guests are attending? '))
+        num_people = int(guestcount())
         print(emoji.emojize("Here are some recommendations for you :fork_and_knife:", variant="emoji_type"))
         with open('recc.csv') as f:
             csv_reader = csv.reader(f)

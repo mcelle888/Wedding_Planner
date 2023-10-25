@@ -177,5 +177,16 @@ def confirm_choice():
     return choice
 
 
-
+# Confirming number of guests
+def guestcount():
+    response = None
+    while response is None:
+        response = input("How many guests are attending?") 
+        try:
+            response = int(response)
+        except ValueError:
+            response = None
+            print(Fore.RED + "Invalid input, please enter a number for the guest")
+            print(Style.RESET_ALL)
+    return response
 
