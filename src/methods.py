@@ -2,11 +2,26 @@ import emoji
 from colorama import Fore, Back, Style
 import datetime 
 
+def confirm_yesno():
+    response = None   
+    while response is None:     
+        try: 
+            response = input(" Please type 'y' or 'n': ") 
+            if  response !='y' and response !='n':
+                raise ValueError      
+        except ValueError:
+            response = None
+            print("try again")
+    return response
+   
+ 
+# confirm_yesno()
+
 
 def introduction(): 
     user_name = input("Please enter your name: ")
     
-    wedding_date_y = int(input("Please enter the year of the wedding (yyyy): "))
+    wedding_date_y = int(input("Please enter the year of the wedding (yyyy): "))   
     wedding_date_m = int(input("Please enter the month of the wedding (mm): "))
     wedding_date_d = int(input("Please enter the day of the wedding (dd): "))
 
@@ -20,11 +35,12 @@ def introduction():
     print(Fore.LIGHTMAGENTA_EX + "Name:", user_name, "\nDate:", wedding_date_d , wedding_date_m , wedding_date_y ,"\nTotal Budget:", total_budget)
     print(Style.RESET_ALL)
     # Checks with user if inputs are correct
-    confirm = input("Are these details correct? Please type 'y' or 'n': ")
-    if confirm == "n":
+    print("Are these details correct?")
+    answer = confirm_yesno()
+    if answer == "n":
         print("Okay, let's try again")
         introduction() 
-    elif confirm == "y": 
+    elif answer == "y": 
         print(emoji.emojize("Thanks for that:grinning_face_with_smiling_eyes: ", variant="emoji_type"))
         print("There are", diff, "days left till the wedding. Let's get planning!")
         # Printing to the end wedding plan text file
@@ -38,6 +54,7 @@ def introduction():
             f.write(" days until the wedding!")
             f.write('\n \n')
             f.write("BUDGET PLAN")
+    
 
  
  

@@ -52,3 +52,98 @@ import emoji
 # dataFrame = pd.read_csv('recc.csv')
 # print("Data",dataFrame)
 
+
+
+# wedding_date_y = int(input("Please enter the year of the wedding (yyyy): "))
+# result = None
+# while result is None:
+#     try:    
+#         result = int(wedding_date_y)
+#     except ValueError:
+#         print("Please enter date using numbers")
+#     except ValueError:
+#         print("Please enter a valid date")
+#     # if len(wedding_date_y) > 4:
+#     #         raise ValueError("Please enter a valid date")
+
+
+# result = None 
+# while result == None:
+#     try:
+#         wedding_date_y = int(input("Please enter the year of the wedding (yyyy): "))
+#         if (wedding_date_y) != int(wedding_date_y):
+#             raise ValueError
+#     except ValueError:
+#         print ("Must enter a number, please try again")
+#     # return wedding_date_y
+ 
+
+# def get_date():
+    
+#     result = None
+#     while result is None:
+#         try:
+#             wedding_date_y = int(input("Please enter the year of the wedding (yyyy): "))   
+#             wedding_date_m = int(input("Please enter the month of the wedding (mm): "))
+#             wedding_date_d = int(input("Please enter the day of the wedding (dd): "))
+#             if wedding_date_y != int(wedding_date_y):
+#                 raise ValueError
+#             if wedding_date_m != int(wedding_date_m):
+#                 raise ValueError
+#             if wedding_date_d != int(wedding_date_d):
+#                 raise ValueError
+#         except ValueError:
+#             print ("Must enter a number, please try again")
+#         return result
+    
+# get_date()
+ 
+# def confirm():
+    
+#     answer = None
+#     while answer is None:
+#         response = input("Are these details correct? Please type 'y' or 'n': ")
+#     try:     
+#         answer = response 
+#     except ValueError:
+#         print("Please type 'y' or 'n")
+ 
+#     return answer
+# confirm()
+
+
+
+
+
+# while True:
+#     try:
+#         confirm = input("Are these details correct? Please type 'y' or 'n': ").lower()
+#         if confirm !='y' or confirm !='n':
+#             raise ValueError
+#     except ValueError:
+#         print("Please type 'y' or 'n")
+
+
+# confirm = input("Are these details correct? Please type 'y' or 'n': ")
+# try:
+#     if confirm !='y' or confirm !='n':
+#         raise ValueError  
+# except ValueError as error:
+#     print("try again")
+ 
+
+def confirm_yesno():
+    response = None   
+    while response is None:     
+        try: 
+            response = input("Are these details correct? Please type 'y' or 'n': ") 
+            if  response !='y' and response !='n':
+                raise ValueError      
+        except ValueError:
+            response = None
+            print("try again")
+    return response
+
+ 
+# confirm_yesno()
+print(confirm_yesno())
