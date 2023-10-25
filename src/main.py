@@ -125,7 +125,7 @@ print(emoji.emojize("Now let's print out a plan for you :party_popper:", variant
 totalcost = int(venue_object.cost) + int(florist_object.cost) + int(food_object.cost)+ int(decoration_object.cost) + int(makeup_hair_object.cost)+ int(photo_video_object.cost) + int(dress_object.cost) + int(cake_object.cost) + int(ring_object.cost) 
 print(totalcost) 
 
-if totalcost >= budget:
-    print("You are within your budget! You have excess", 100, "to spend!")
+if totalcost <= budget:
+    print("You are within your budget! You have excess $ ", (budget - totalcost), "to spend!")
 else:
-    print("You are over your budget! You need to cut", 100, "out!")
+    print("You are over your budget! You need to cut $", (totalcost - budget), "out!")
