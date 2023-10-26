@@ -18,41 +18,58 @@
 Start of day 1
 
 ![screenshot1](docs/day1start.png)
+
 Feature 1 
 
 ![screenshot2](docs/feature1_day1.png)
+
 Feature 2
 
 ![screenshot3](docs/feature2_day1.png)
+
 Feature 3
 
 ![screenshot4](docs/feature3_day1.png)
 
+
 End of day 1
 ![screenshot5](docs/day1_end.png)
+
 
 
 #### Screenshots Day 2
 Feature 3
 
 ![screenshot6](docs/feature3_day2.png)
+
 Feature 4
 
 ![screenshot7](docs/feature4_day2.png)
+
 End of day 2
 
 ![screenshot8](docs/day2_end.png)
+
 
 #### Screenshots Day 3
 Feature 4
 
 ![screenshot9](docs/feature4day3.png)
 
+
 End of day 3
 
 ![screenshot10](docs/day3_end.png)
 
 #### Screenshots Day 4
+
+Error and Testing 
+
+![screenshot11](docs/testing_day4.png)
+
+End of day 4
+
+![screenshot12](docs/day4_end.png)
 
 #### Screenshots Day 5
 
