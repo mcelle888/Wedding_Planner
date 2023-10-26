@@ -123,14 +123,27 @@ with open('weddingplan.txt', 'a') as f:
 
 print(Style.RESET_ALL)
 
-# Ending message
+#Ending message with final budget
+
 print(emoji.emojize("All done! Thank you for that :smiling_face_with_smiling_eyes:", variant="emoji_type"))
-print(emoji.emojize("Now let's print out a plan for you :party_popper:", variant="emoji_type"))
 
 # Budget Calculator for wedding plan
 
 totalcost = int(venue_object.cost) + int(florist_object.cost) + int(food_object.cost)+ int(decoration_object.cost) + int(makeup_hair_object.cost)+ int(photo_video_object.cost) + int(dress_object.cost) + int(cake_object.cost) + int(ring_object.cost) 
-print(totalcost) 
+difference = budget -totalcost
+print(Fore.LIGHTMAGENTA_EX + f"Your budget was $ {budget}")
+print(f"Your estimated cost is $ {totalcost}")
+if totalcost <=budget: 
+    print(f"You are within your budget! You have excess $ {difference}")
+else:
+    print(f"You are over your budget! You have to cut $ {difference * -1}")
+          
+print(Style.RESET_ALL)
+# Printing message
+
+print(emoji.emojize("Now let's print out a plan for you :party_popper:", variant="emoji_type"))
+ 
+      
 if totalcost <= budget:
     with open('weddingplan.txt', 'a') as f:
         f.write("Your total budget was: $ ")

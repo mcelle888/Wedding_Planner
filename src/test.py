@@ -209,23 +209,23 @@ import emoji
 #     return response
 import datetime
 
-def enter_day():
-    response = None
-    while response is None:
-        response = (input("Please enter the day of the wedding (dd): "))
-        try:
-            if response == int(response):
-               raise ValueError
+# def enter_day():
+#     response = None
+#     while response is None:
+#         response = (input("Please enter the day of the wedding (dd): "))
+#         try:
+#             if response == int(response):
+#                raise ValueError
             
-            if int(response) > 31 or int(response) < 1:
-                raise ValueError     
-        except ValueError:
-            response = None
-            print(Fore.RED + "Invalid input, please enter a number value for the day")
-            print(Style.RESET_ALL)
-    return response
+#             if int(response) > 31 or int(response) < 1:
+#                 raise ValueError     
+#         except ValueError:
+#             response = None
+#             print(Fore.RED + "Invalid input, please enter a number value for the day")
+#             print(Style.RESET_ALL)
+#     return response
      
-print(enter_day())
+# print(enter_day())
 # wedding_date_y = int(input("Please enter the year of the wedding (yyyy): "))   
 # wedding_date_m = int(input("Please enter the month of the wedding (mm): "))
 # wedding_date_d = int(input("Please enter the day of the wedding (dd): "))
@@ -235,3 +235,26 @@ print(enter_day())
 # today_date = datetime.date.today()
 # wedding_date = datetime.date(wedding_date_y, wedding_date_m, wedding_date_d)
 # diff = (wedding_date-today_date).days
+
+def enter_year():
+    response = None
+    while response is None:
+        response = (input("Please enter the year of the wedding (yyyy): "))  
+        try:
+            if response == int(response):
+                raise ValueError
+            
+            if len(response) != 4:
+                raise ValueError
+            
+            if int(response) < datetime.date.today().year:
+                raise ValueError
+            
+        except ValueError:
+            response = None
+            print(Fore.RED + "Invalid input, please enter a 4 digit number for a future date")
+            print(Style.RESET_ALL)
+    return response
+
+enter_year()
+ 

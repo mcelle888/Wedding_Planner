@@ -1,4 +1,4 @@
-from methods import confirm_choice, guestcount 
+from methods import confirm_choice, guestcount, enter_year
 
 import pytest 
 
@@ -23,3 +23,16 @@ def test_three(monkeypatch):
         monkeypatch.setattr('builtins.input', lambda _: "500")
         result = guestcount()
         assert result == 500
+
+# def test_four(monkeypatch):
+#     with pytest.raises(ValueError):        
+#         enter_year()
+#         monkeypatch.setattr('builtins.input', lambda _: "45")
+
+# def test_five(monkeypatch):
+#         monkeypatch.setattr('builtins.input', lambda _: "2024")
+#         result = enter_year()
+#         assert result == "2024"
+
+
+ 

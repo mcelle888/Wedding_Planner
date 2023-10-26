@@ -180,7 +180,7 @@ def confirm_choice():
 def guestcount():
     response = None
     while response is None:
-        response = input("How many guests are attending?") 
+        response = input("How many guests are attending? ") 
         try:
             response = int(response)
         except ValueError:

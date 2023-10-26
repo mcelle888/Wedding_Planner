@@ -1,7 +1,7 @@
 Name: michelle
 Date of Wedding: 2024-10-02
 342 days until the wedding!
-Budget: 200000
+Budget: 100000
  
 BUDGET PLAN
 Venue Name: LuxeCraves
@@ -13,7 +13,7 @@ Florist Cost: $1000
 
 
 Caterer Name: Nibble
-Caterer Cost: $5000
+Caterer Cost: $50000
 
 
 Decor Name: Festiva
@@ -41,6 +41,6 @@ Ring Cost: $1000
 
 BUDGET
 
-Your total budget was: $ 200000
-Your total estimated cost comes to: $ 24850
-You are within your budget! You have excess $ 175150 to spend!
+Your total budget was: $ 40000
+Your total estimated cost comes to: $ 69850
+You are over your budget! You need to cut $ 29850 out!
