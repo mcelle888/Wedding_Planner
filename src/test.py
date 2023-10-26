@@ -236,25 +236,25 @@ import datetime
 # wedding_date = datetime.date(wedding_date_y, wedding_date_m, wedding_date_d)
 # diff = (wedding_date-today_date).days
 
-def enter_year():
-    response = None
-    while response is None:
-        response = (input("Please enter the year of the wedding (yyyy): "))  
-        try:
-            if response == int(response):
-                raise ValueError
+# def enter_year():
+#     response = None
+#     while response is None:
+#         response = (input("Please enter the year of the wedding (yyyy): "))  
+#         try:
+#             if response == int(response):
+#                 raise ValueError
             
-            if len(response) != 4:
-                raise ValueError
+#             if len(response) != 4:
+#                 raise ValueError
             
-            if int(response) < datetime.date.today().year:
-                raise ValueError
+#             if int(response) < datetime.date.today().year:
+#                 raise ValueError
             
-        except ValueError:
-            response = None
-            print(Fore.RED + "Invalid input, please enter a 4 digit number for a future date")
-            print(Style.RESET_ALL)
-    return response
+#         except ValueError:
+#             response = None
+#             print(Fore.RED + "Invalid input, please enter a 4 digit number for a future date")
+#             print(Style.RESET_ALL)
+#     return response
 
-enter_year()
+# enter_year()
  

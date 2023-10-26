@@ -18,6 +18,7 @@ class WeddingItems:
             self.cost = confirm_cost(self.item_type)          
         elif confirm == "n":
             self.get_recc()
+        return self.name, self.cost
 
     
 # Instances of Wedding Items 
@@ -54,6 +55,7 @@ class Venue(WeddingItems):
         elif option == 'E':
             self.name = "Undecided*"
             self.cost = 15000
+        return self.name, self.cost
 
  
 
