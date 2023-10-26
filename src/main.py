@@ -1,27 +1,27 @@
 from pyfiglet import Figlet
 import emoji
-from colorama import Fore, Back, Style
-import datetime 
+from colorama import Fore, Style
 from methods import get_details
-from weddingitems import WeddingItems, Venue, Florist, Food, Decoration, MakeupHair, PhotoVideo, Dress, Cake, Ring 
+from weddingitems import (Venue, Florist, Food, Decoration,
+                          MakeupHair, PhotoVideo, Dress, Cake, Ring)
 
 # Opening App (Intro)
 f = Figlet(font='contessa')
 print(f.renderText('~~~ Congratulations! ~~~'))
-print(emoji.emojize("Congrats on your engagement:red_heart:  Let's get you started on some planning!", variant="emoji_type"))
+print(emoji.emojize("Congrats on your engagement:red_heart: ",
+                    variant="emoji_type"))
+print("Let's get you started on some planning!")
 
 # Get basic user's basic information
 budget = get_details()
 
 # Venue input
-venue_object = Dress("dress")
+venue_object = Venue("venue")
 venue_object.ask_user()
-print(Fore.BLUE + f"{venue_object.__dict__}") 
-totalcost = int(venue_object.cost)
-print(totalcost)
+print(Fore.BLUE + f"{venue_object.__dict__}")
 with open('weddingplan.txt', 'a') as f:
     f.write("\nVenue Name: ")
-    f.write(venue_object.name) 
+    f.write(venue_object.name)
     f.write("\nVenue Cost: $")
     f.write(str(venue_object.cost))
     f.write("\n\n")
@@ -29,22 +29,18 @@ with open('weddingplan.txt', 'a') as f:
 # Florist input
 florist_object = Florist("florist")
 florist_object.ask_user()
-print(Fore.LIGHTBLUE_EX + f"{florist_object.__dict__}") 
-totalcost = int(venue_object.cost) + int(florist_object.cost)
-print(totalcost)
+print(Fore.LIGHTBLUE_EX + f"{florist_object.__dict__}")
 with open('weddingplan.txt', 'a') as f:
     f.write("\nFlorist Name: ")
-    f.write(florist_object.name) 
+    f.write(florist_object.name)
     f.write("\nFlorist Cost: $")
     f.write(str(florist_object.cost))
     f.write("\n\n")
- 
+
 # Catering input
 food_object = Food("caterer")
 food_object.ask_user()
 print(Fore.LIGHTBLUE_EX + f"{food_object.__dict__}")
-totalcost = int(venue_object.cost) + int(florist_object.cost) + int(food_object.cost)
-print(totalcost)
 with open('weddingplan.txt', 'a') as f:
     f.write("\nCaterer Name: ")
     f.write(food_object.name) 
@@ -96,7 +92,6 @@ with open('weddingplan.txt', 'a') as f:
     f.write(str(dress_object.cost))
     f.write("\n\n")
 
-
 # Cake input
 cake_object = Cake("cake shop ")
 cake_object.ask_user()
@@ -123,27 +118,41 @@ with open('weddingplan.txt', 'a') as f:
 
 print(Style.RESET_ALL)
 
-#Ending message with final budget
-
-print(emoji.emojize("All done! Thank you for that :smiling_face_with_smiling_eyes:", variant="emoji_type"))
+# Ending message with final budget
+print(emoji.emojize(
+    "All done! Thank you for that :smiling_face_with_smiling_eyes:",
+    variant="emoji_type"
+    ))
 
 # Budget Calculator for wedding plan
+totalcost = (
+            int(venue_object.cost) 
+            + int(florist_object.cost) 
+            + int(food_object.cost) 
+            + int(decoration_object.cost) 
+            + int(makeup_hair_object.cost) 
+            + int(photo_video_object.cost)
+            + int(dress_object.cost) 
+            + int(cake_object.cost) 
+            + int(ring_object.cost)
+            )
 
-totalcost = int(venue_object.cost) + int(florist_object.cost) + int(food_object.cost)+ int(decoration_object.cost) + int(makeup_hair_object.cost)+ int(photo_video_object.cost) + int(dress_object.cost) + int(cake_object.cost) + int(ring_object.cost) 
-difference = budget -totalcost
-print(Fore.LIGHTMAGENTA_EX + f"Your budget was $ {budget}")
+difference = budget - totalcost
+
+print(Fore.LIGHTMAGENTA_EX 
+      + f"Your budget was $ {budget}")
 print(f"Your estimated cost is $ {totalcost}")
-if totalcost <=budget: 
+if totalcost <= budget: 
     print(f"You are within your budget! You have excess $ {difference}")
 else:
-    print(f"You are over your budget! You have to cut $ {difference * -1}")
-          
+    print(f"You are over your budget! You have to cut $ {difference * -1}")          
 print(Style.RESET_ALL)
+
 # Printing message
 
-print(emoji.emojize("Now let's print out a plan for you :party_popper:", variant="emoji_type"))
- 
-      
+print(emoji.emojize("Now let's print out a plan for you :party_popper:", 
+                    variant="emoji_type"))
+
 if totalcost <= budget:
     with open('weddingplan.txt', 'a') as f:
         f.write("Your total budget was: $ ")
@@ -166,4 +175,3 @@ else:
         f.write("You are over your budget! You need to cut $ ")
         f.write(str((totalcost - budget)))
         f.write(" out!")
-   
