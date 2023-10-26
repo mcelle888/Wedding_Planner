@@ -89,7 +89,7 @@ class Florist(WeddingItems):
         elif option == 'E':
             self.name = "Undecided*"
             self.cost = 1500
-         
+        return self.name, self.cost 
    
 
 
@@ -124,7 +124,7 @@ class Food(WeddingItems):
         elif option == 'E':
             self.name = "Undecided*"
             self.cost = 70 * num_people
-      
+        return self.name, self.cost
 
 
 # DECOR
@@ -159,7 +159,7 @@ class Decoration(WeddingItems):
         elif option == 'E':
             self.name = "Undecided*"
             self.cost = 1800
-
+        return self.name, self.cost
 # BEAUTY SERVICES
 class MakeupHair(WeddingItems):
     def get_recc(self):
@@ -190,7 +190,7 @@ class MakeupHair(WeddingItems):
         elif option == 'E':
             self.name = "Undecided*"
             self.cost = 800
-
+        return self.name, self.cost
 # PHOTO AND VIDEO
 class PhotoVideo(WeddingItems):
     def get_recc(self):
@@ -220,7 +220,7 @@ class PhotoVideo(WeddingItems):
         elif option == 'E':
             self.name = "Undecided*"
             self.cost = 3500
-
+        return self.name, self.cost
 # CLOTHES
 class Dress(WeddingItems):
     def get_recc(self):
@@ -251,7 +251,7 @@ class Dress(WeddingItems):
         elif option == 'E':
             self.name = "Undecided*"
             self.cost = 3000
-        
+        return self.name, self.cost 
 
 # CAKE
 class Cake(WeddingItems): 
@@ -282,7 +282,7 @@ class Cake(WeddingItems):
         elif option == 'E':
             self.name = "Undecided*"
             self.cost = 600
-
+        return self.name, self.cost
 # RING
 class Ring(WeddingItems):
     def get_recc(self):
@@ -313,4 +313,4 @@ class Ring(WeddingItems):
         elif option == 'E':
             self.name = "Undecided*"
             self.cost = 2500
- 
+        return self.name, self.cost

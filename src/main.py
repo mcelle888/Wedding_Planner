@@ -14,7 +14,7 @@ print(emoji.emojize("Congrats on your engagement:red_heart:  Let's get you start
 budget = get_details()
 
 # Venue input
-venue_object = Venue("venue")
+venue_object = Dress("dress")
 venue_object.ask_user()
 print(Fore.BLUE + f"{venue_object.__dict__}") 
 totalcost = int(venue_object.cost)
@@ -53,7 +53,7 @@ with open('weddingplan.txt', 'a') as f:
     f.write("\n\n")
 
 # Decor input
-decoration_object = Decoration("event decorater ")
+decoration_object = Decoration("event decorater")
 decoration_object.ask_user()
 print(Fore.LIGHTBLUE_EX + f"{decoration_object.__dict__}")
 with open('weddingplan.txt', 'a') as f:
@@ -75,7 +75,7 @@ with open('weddingplan.txt', 'a') as f:
     f.write("\n\n")
 
 # Photographer and Videographer input
-photo_video_object = PhotoVideo("photographer and videographer ")
+photo_video_object = PhotoVideo("photographer and videographer")
 photo_video_object.ask_user()
 print(Fore.LIGHTBLUE_EX + f"{photo_video_object.__dict__}")
 with open('weddingplan.txt', 'a') as f:
