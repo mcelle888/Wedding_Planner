@@ -1,8 +1,9 @@
 from pyfiglet import Figlet
 import emoji
 from colorama import Fore, Style
-from methods import get_details
+from methods import get_details, schedule
 import subprocess
+import datetime
 from weddingitems import (Venue, Florist, Food, Decoration,
                           MakeupHair, PhotoVideo, Dress, Cake, Ring)
 
@@ -15,7 +16,8 @@ print(emoji.emojize("Congrats on your engagement:red_heart: ",
 print("Let's get you started on some planning!")
 
 # Get basic user's basic information
-budget = get_details()
+user_details = get_details()
+
 
 # Venue input
 venue_object = Venue("venue")
@@ -24,7 +26,7 @@ print(Fore.BLUE + f"{venue_object.__dict__}")
 with open('weddingplan.txt', 'a') as f:
     f.write("\nVenue Name: ")
     f.write(venue_object.name)
-    f.write("\nVenue Cost: $")
+    f.write("\nVenue Cost: $") 
     f.write(str(venue_object.cost))
     f.write("\n\n")
 
@@ -139,15 +141,15 @@ totalcost = (
             + int(ring_object.cost)
             )
 
-difference = budget - totalcost
+difference = user_details[0] - totalcost
 
 print(Fore.LIGHTMAGENTA_EX 
-      + f"Your budget was $ {budget}")
+      + f"Your budget was $ {user_details[0]}")
 print(f"Your estimated cost is $ {totalcost}")
-if totalcost <= budget: 
+if totalcost <= user_details[0]: 
     print(f"You are within your budget! You have excess $ {difference}")
 else:
-    print(f"You are over your budget! You have to cut $ {difference * -1}")          
+    print(f"You are over your budget! You have to cut $ {difference * - 1}")          
 print(Style.RESET_ALL)
 
 # Printing message
@@ -155,28 +157,82 @@ print(Style.RESET_ALL)
 print(emoji.emojize("Now let's print out a plan for you :party_popper:", 
                     variant="emoji_type"))
 
-if totalcost <= budget:
+if totalcost <= user_details[0]:
     with open('weddingplan.txt', 'a') as f:
         f.write("Your total budget was: $ ")
-        f.write(str(budget))
+        f.write(str(user_details[0]))
         f.write("\n")
         f.write("Your total estimated cost comes to: $ ")
         f.write(str(totalcost))
         f.write("\n")
         f.write("You are within your budget! You have excess $ ")
-        f.write(str((budget - totalcost)))
+        f.write(str((user_details[0] - totalcost)))
         f.write(" to spend!")
 else:
     with open('weddingplan.txt', 'a') as f:
         f.write("Your total budget was: $ ")
-        f.write(str(budget))
+        f.write(str(user_details[0]))
         f.write("\n")
         f.write("Your total estimated cost comes to: $ ")
         f.write(str(totalcost))
         f.write("\n")
         f.write("You are over your budget! You need to cut $ ")
-        f.write(str((totalcost - budget)))
-        f.write(" out!")
+        f.write(str((totalcost - user_details[0])))
+        f.write(" out!\n\n")
+
+# Prints scheduled to do list (function found in methods.py)
+
+task_one = (round(user_details[1] * 0.1))
+task_two = (round(user_details[1] * 0.25))
+task_three = (round(user_details[1] * 0.4))
+task_four = (round(user_details[1] * 0.6))
+task_five = (round(user_details[1] * 0.7))
+task_six = (round(user_details[1] * 0.8))
+task_seven = (round(user_details[1] * 0.9))
+task_eight = (round(user_details[1] * 1))
+
+today = datetime.date.today()
+end_date_one = (today + datetime.timedelta(days=task_one)).strftime("%Y-%m-%d")
+end_date_two = (today + datetime.timedelta(days=task_two)).strftime("%Y-%m-%d")
+end_date_three = (today + datetime.timedelta(days=task_three)).strftime("%Y-%m-%d")
+end_date_four = (today + datetime.timedelta(days=task_four)).strftime("%Y-%m-%d")
+end_date_five = (today + datetime.timedelta(days=task_five)).strftime("%Y-%m-%d")
+end_date_six = (today + datetime.timedelta(days=task_six)).strftime("%Y-%m-%d")
+end_date_seven = (today + datetime.timedelta(days=task_seven)).strftime("%Y-%m-%d")
+end_date_eight = (today + datetime.timedelta(days = task_eight)).strftime("%Y-%m-%d")
+
+with open('weddingplan.txt', 'a') as f:
+    f.write("PLANNING SCHEDULE\n\n")
+    f.write(end_date_one)
+    f.write("\n")
+    f.write("Start looking for vendors\n\n")
+    f.write(end_date_two)
+    f.write("\n")
+    f.write("Hire/Book all suppliers and vendors\n\n")
+    f.write(end_date_three)
+    f.write("\n")
+    f.write("Send out invitations\n\n")
+    f.write(end_date_four)
+    f.write("\n")
+    f.write("Food Tasting\n")
+    f.write("Call vendors to confirm\n\n")
+    f.write(end_date_five)
+    f.write("\n")
+    f.write("Hair and Makeup Trial\n")
+    f.write("Dress collection and last alterations\n\n")
+    f.write(end_date_six)
+    f.write("\n")
+    f.write("Organise Final payments for vendors\n")
+    f.write("Final guest count and plean table arrangements\n")
+    f.write("Plan accommadation and transport\n\n")
+    f.write(end_date_seven)
+    f.write("\n")
+    f.write("Ceremony and Reception rehearsals\n\n")
+    f.write(end_date_eight)
+    f.write("\n")
+    f.write("D-DAY: GET MARRIED!")
+
+
 
 # Opens a text file of the wedding plan for the user to save 
 subprocess.call(['notepad.exe', 'weddingplan.txt'])

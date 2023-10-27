@@ -3,6 +3,7 @@ from colorama import Fore, Style
 import datetime
 
 
+
 def get_details():
     user_name = input("Please enter your name: ")
     wedding_date_y = int(enter_year())
@@ -31,7 +32,7 @@ def get_details():
         print(emoji.emojize("""Thanks for that:grinning_face_with_smiling_eyes:"""
                              ,variant="emoji_type"))
         print("There are", diff, "days left till the wedding." 
-              "Let's get planning!")
+              " Let's get planning!")
 
         # Printing to the end wedding plan text file
         with open('weddingplan.txt', 'w') as f:
@@ -46,8 +47,9 @@ def get_details():
             f.write("Budget: ")
             f.write(str(total_budget))
             f.write('\n \n')
-            f.write("BUDGET PLAN")
-    return total_budget
+            f.write("BUDGET PLAN\n")
+    
+    return total_budget, diff
 
 # Error handling methods
 
@@ -127,7 +129,7 @@ def enter_budget():
             print(Style.RESET_ALL)
     return response
 
-# For confirming information entered
+# For confirming basic details entered
 
 
 def confirm_yesno():
@@ -151,7 +153,7 @@ def confirm_wedding_item(item_type):
     while response is None:
         try:
             response = input(Fore.LIGHTMAGENTA_EX + f"""Have you chosen a {item_type}?"""
-                             """Please enter 'y' or 'n' """).lower()
+                             """ Please enter 'y' or 'n' """).lower()
             if response != 'y' and response != 'n':
                 raise ValueError
         except ValueError:
@@ -212,4 +214,8 @@ def guest_count():
             print(Fore.RED + """Invalid input, please enter a"""
                    """ number for the guest""")
             print(Style.RESET_ALL)
+
     return response
+
+
+

@@ -42,7 +42,7 @@ class Venue(WeddingItems):
                           row[1], "' which costs: $", row[2],
                           ". It is", row[3]
                           )
-        print("""Option D.  Randomly select one for me! \nOption E."""
+        print("""Option D.  Randomly select one for me! \nOption E. """
               """Leave blank (an average price will be used to calculate"""
               """the final cost estimate)""")
         print(Style.RESET_ALL)
@@ -84,7 +84,7 @@ class Florist(WeddingItems):
                           "' which costs: $", row[2],
                           ". They offer a ", row[3]
                           )
-        print("""Option D.  Randomly select one for me! \nOption E."""
+        print("""Option D.  Randomly select one for me! \nOption E. """
               """Leave blank (an average price will be used to calculate"""
               """the final cost estimate)""")
         print(Style.RESET_ALL)
@@ -123,7 +123,7 @@ class Food(WeddingItems):
                 if index == 4 or index == 5 or index == 6:
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1],
                           "' which costs: $", row[2], "pp. They", row[3])
-        print("""Option D.  Randomly select one for me! \nOption E."""
+        print("""Option D.  Randomly select one for me! \nOption E. """
               """Leave blank (an average price will be used to calculate"""
               """the final cost estimate)""")
         print(Style.RESET_ALL)
@@ -164,7 +164,7 @@ class Decoration(WeddingItems):
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1],
                           "' which costs: $", row[2], ". They", row[3]
                           )
-        print("""Option D.  Randomly select one for me! \nOption E."""
+        print("""Option D.  Randomly select one for me! \nOption E. """
               """Leave blank (an average price will be used to calculate"""
               """the final cost estimate)""")
         print(Style.RESET_ALL)
@@ -206,7 +206,7 @@ class MakeupHair(WeddingItems):
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1],
                           "' which costs: $", row[2], ". They offer", row[3]
                           )
-        print("""Option D.  Randomly select one for me! \nOption E."""
+        print("""Option D.  Randomly select one for me! \nOption E. """
               """Leave blank (an average price will be used to calculate"""
               """the final cost estimate)""")
         print(Style.RESET_ALL)
@@ -246,7 +246,7 @@ class PhotoVideo(WeddingItems):
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1],
                           "' which costs: $", row[2], ". They offer", row[3]
                           )
-        print("""Option D.  Randomly select one for me! \nOption E."""
+        print("""Option D.  Randomly select one for me! \nOption E. """
               """Leave blank (an average price will be used to calculate"""
               """the final cost estimate)""")
         print(Style.RESET_ALL)
@@ -285,7 +285,7 @@ class Dress(WeddingItems):
                 if index == 19 or index == 20 or index == 21:
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1],
                           "' which costs: $", row[2], ". They ", row[3])
-        print("""Option D.  Randomly select one for me! \nOption E."""
+        print("""Option D.  Randomly select one for me! \nOption E. """
               """Leave blank (an average price will be used to calculate"""
               """the final cost estimate)""")
         print(Style.RESET_ALL)
@@ -322,7 +322,7 @@ class Cake(WeddingItems):
                 if index == 22 or index == 23 or index == 24:
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1],
                           "' which costs: $", row[2], ". They ", row[3])
-        print("""Option D.  Randomly select one for me! \nOption E."""
+        print("""Option D.  Randomly select one for me! \nOption E. """
               """Leave blank (an average price will be used to calculate"""
               """the final cost estimate)""")
         print(Style.RESET_ALL)
@@ -359,7 +359,7 @@ class Ring(WeddingItems):
                 if index == 25 or index == 26 or index == 27:
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1],
                           "' which costs: $", row[2], ". They ", row[3])
-        print("""Option D.  Randomly select one for me! \nOption E."""
+        print("""Option D.  Randomly select one for me! \nOption E. """
               """Leave blank (an average price will be used to calculate"""
               """the final cost estimate)""")
         print(Style.RESET_ALL)

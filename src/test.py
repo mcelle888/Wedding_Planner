@@ -258,3 +258,86 @@ import datetime
 
 # enter_year()
  
+
+from methods import enter_year, enter_month, enter_day, enter_budget
+
+from colorama import Fore, Style
+
+def get_details():
+    user_name = input("Please enter your name: ")
+    wedding_date_y = int(enter_year())
+    wedding_date_m = int(enter_month())
+    wedding_date_d = int(enter_day())
+    # calculates total days till wedding
+    today_date = datetime.date.today()
+    wedding_date = datetime.date(wedding_date_y,
+                                 wedding_date_m, wedding_date_d)
+    diff = (wedding_date-today_date).days
+    total_budget = int(enter_budget())
+    print(Fore.LIGHTMAGENTA_EX + "Name:", user_name, "\nDate:",
+          wedding_date_d, wedding_date_m, wedding_date_y,
+          "\nTotal Budget:", total_budget
+          )
+
+    print(Style.RESET_ALL)
+
+    return total_budget, diff
+
+user_details = get_details()
+
+print (user_details[0])
+
+def schedule():
+    print(user_details[1])
+    task_one = (round(user_details[1] * 0.1))
+    task_two = (round(user_details[1] * 0.25))
+    task_three = (round(user_details[1] * 0.4))
+    task_four = (round(user_details[1] * 0.6))
+    task_five = (round(user_details[1] * 0.7))
+    task_six = (round(user_details[1] * 0.8))
+    task_seven = (round(user_details[1] * 0.9))
+    task_eight = (round(user_details[1] * 1))
+
+    today = datetime.date.today()
+    end_date_one = (today + datetime.timedelta(days=task_one)).strftime("%Y-%m-%d")
+    end_date_two = (today + datetime.timedelta(days=task_two)).strftime("%Y-%m-%d")
+    end_date_three = (today + datetime.timedelta(days=task_three)).strftime("%Y-%m-%d")
+    end_date_four = (today + datetime.timedelta(days=task_four)).strftime("%Y-%m-%d")
+    end_date_five = (today + datetime.timedelta(days=task_five)).strftime("%Y-%m-%d")
+    end_date_six = (today + datetime.timedelta(days=task_six)).strftime("%Y-%m-%d")
+    end_date_seven = (today + datetime.timedelta(days=task_seven)).strftime("%Y-%m-%d")
+    end_date_eight = (today + datetime.timedelta(days = task_eight)).strftime("%Y-%m-%d")
+
+    with open('weddingplan.txt', 'a') as f:
+        f.write("PLANNING SCHEDULE\n\n")
+        f.write(end_date_one)
+        f.write("\n")
+        f.write("Start looking for vendors\n\n")
+        f.write(end_date_two)
+        f.write("\n")
+        f.write("Hire/Book all suppliers and vendors\n\n")
+        f.write(end_date_three)
+        f.write("\n")
+        f.write("Send out invitations\n\n")
+        f.write(end_date_four)
+        f.write("\n")
+        f.write("Food Tasting\n")
+        f.write("Call vendors to confirm\n\n")
+        f.write(end_date_five)
+        f.write("\n")
+        f.write("Hair and Makeup Trial\n")
+        f.write("Dress collection and last alterations\n\n")
+        f.write(end_date_six)
+        f.write("\n")
+        f.write("Organise Final payments for vendors\n")
+        f.write("Final guest count and plean table arrangements\n")
+        f.write("Plan accommadation and transport\n\n")
+        f.write(end_date_seven)
+        f.write("\n")
+        f.write("Ceremony and Reception rehearsals\n\n")
+        f.write(end_date_eight)
+        f.write("\n")
+        f.write("D-DAY: GET MARRIED!")
+      
+
+schedule()
