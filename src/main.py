@@ -1,7 +1,7 @@
 from pyfiglet import Figlet
 import emoji
 from colorama import Fore, Style
-from methods import get_details, schedule
+from methods import get_details
 import subprocess
 import datetime
 from weddingitems import (Venue, Florist, Food, Decoration,
@@ -117,8 +117,8 @@ with open('weddingplan.txt', 'a') as f:
     f.write("\nRing Cost: $")
     f.write(str(ring_object.cost))
     f.write("\n\n")
-    f.write("BUDGET")
-    f.write("\n\n")
+    f.write("~ BUDGET ~ \n\n")
+   
 
 print(Style.RESET_ALL)
 
@@ -202,7 +202,7 @@ end_date_seven = (today + datetime.timedelta(days=task_seven)).strftime("%Y-%m-%
 end_date_eight = (today + datetime.timedelta(days = task_eight)).strftime("%Y-%m-%d")
 
 with open('weddingplan.txt', 'a') as f:
-    f.write("PLANNING SCHEDULE\n\n")
+    f.write("\n\n ~ PLANNING CHECKLIST ~\n\n")
     f.write(end_date_one)
     f.write("\n")
     f.write("Start looking for vendors\n\n")

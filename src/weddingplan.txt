@@ -1,20 +1,23 @@
-Name: Michelle
+~ USER DETAILS ~ 
+
+Name: Michelle Liang
 Date of Wedding: 2024-09-08
 316 days until the wedding!
 Budget: 50000
  
-BUDGET PLAN
-
-Venue Name: LuxeCraves
-Venue Cost: $10000
+~ VENDOR COSTS ~
 
 
-Florist Name: Tornbury Castle
-Florist Cost: $20000
+Venue Name: Bramleigh
+Venue Cost: $30000
+
+
+Florist Name: FlowersbySam
+Florist Cost: $1000
 
 
 Caterer Name: Nibble
-Caterer Cost: $5000
+Caterer Cost: $0
 
 
 Decor Name: Festiva
@@ -25,26 +28,26 @@ Beauty Service Name: Jesse'sBeauty
 Beauty Service Cost: $500
 
 
-Photographer and Videographer Name: Capture
-Photographer and Videographer Cost: $3500
+Photographer and Videographer Name: ArtStudio
+Photographer and Videographer Cost: $5500
 
 
 Dress Shop Name: Simple
 Dress Cost: $2000
 
 
-Cake Shop Name: Katie'sBaking
-Cake Cost: $350
+Cake Shop Name: LeBonne
+Cake Cost: $600
 
 
-Ring Shop Name: Charm
-Ring Cost: $1000
+Ring Shop Name: Opulent
+Ring Cost: $5000
 
-BUDGET
+~ BUDGET ~ 
 
 Your total budget was: $ 50000
-Your total estimated cost comes to: $ 43850
-You are within your budget! You have excess $ 6150 to spend!PLANNING SCHEDULE
+Your total estimated cost comes to: $ 46100
+You are within your budget! You have excess $ 3900 to spend!~ PLANNING SCHEDULE ~
 
 2023-11-29
 Start looking for vendors

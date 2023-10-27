@@ -36,6 +36,7 @@ def get_details():
 
         # Printing to the end wedding plan text file
         with open('weddingplan.txt', 'w') as f:
+            f.write("~ USER DETAILS ~ \n\n")
             f.write("Name: ")
             f.write(user_name)
             f.write("\nDate of Wedding: ")
@@ -44,10 +45,10 @@ def get_details():
             f.write(str(diff))
             f.write(" days until the wedding!")
             f.write('\n')
-            f.write("Budget: ")
+            f.write("Budget:$ ")
             f.write(str(total_budget))
             f.write('\n \n')
-            f.write("BUDGET PLAN\n")
+            f.write("~ VENDOR COSTS ~\n\n")
     
     return total_budget, diff
 
