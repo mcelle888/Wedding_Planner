@@ -10,11 +10,64 @@
 
 ### Features in the Application
 
-### Help Documentation (How to Install and Use Application)
+#### Feature 1 : User's basic information
+Allows the user to input some basic information about themselves and the wedding including their name, budget and date of wedding.
+
+
+#### Feature 2: 
+Goes through a list of vendors for a wedding and asks the user if they have a chosen vendor or not. If they do, they are asked to enter the name and the cost. If not, they are provided with 3 reccommendations for each vendor with their respective costs and a short description. The user can pick one of these recommendations or they can choose to have the app randomly pick out of the three or finally they can choose to leave the vendor blank (in this case, an average cost will be used to calculate the final cost estimate). 
+
+
+#### Feature 3:
+Creates a text file containing the users basic information, suppliers and final cost estimate. Will print whether they are under or over budget and by how much. 
+
+
+### Help Documentation 
+
+#### App Installation Guide
+
+
+
+##### 1. Open Terminal
+In your terminal window, check that you have the correct version of python installed 
+
+#### 2. Download Wedding App
+
+Copy and paste the following to your terminal: 
+```bash
+git clone git@github.com:mcelle888/MichelleLiang_T1A3.git
+```
+
+The file can also be found from github [here](https://github.com/mcelle888/MichelleLiang_T1A3). 
+
+#### 3. Open the application file that was cloned 
+```bash
+cd MichelleLiang_T1A3/src
+```
+
+#### 4. Run the following executable command to open the application 
+Running the code below will:
+1. Check whether or not python is installed
+2. Create and activate a virtual environment
+3. Install all dependencies required for this app
+4. Run the application file
+
+
+```bash
+bash open_app.sh
+```
+
+#### Dependencies required
+
+#### Hardware Requirements
+
+
+
 
 ### Implementation Plan
 [Link to Trello](https://trello.com/b/Znwe2osx/terminal-app)
 #### Screenshots Day 1
+
 Start of day 1
 
 ![screenshot1](docs/day1start.png)
@@ -72,4 +125,9 @@ End of day 4
 ![screenshot12](docs/day4_end.png)
 
 #### Screenshots Day 5
+
+
+
+
+#### References 
 

@@ -178,5 +178,7 @@ else:
         f.write(str((totalcost - budget)))
         f.write(" out!")
 
-
+# Opens a text file of the wedding plan for the user to save 
 subprocess.call(['notepad.exe', 'weddingplan.txt'])
+
+
