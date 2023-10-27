@@ -2,6 +2,7 @@ from pyfiglet import Figlet
 import emoji
 from colorama import Fore, Style
 from methods import get_details
+import subprocess
 from weddingitems import (Venue, Florist, Food, Decoration,
                           MakeupHair, PhotoVideo, Dress, Cake, Ring)
 
@@ -176,3 +177,6 @@ else:
         f.write("You are over your budget! You need to cut $ ")
         f.write(str((totalcost - budget)))
         f.write(" out!")
+
+
+subprocess.call(['notepad.exe', 'weddingplan.txt'])
