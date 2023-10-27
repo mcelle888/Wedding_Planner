@@ -4,7 +4,7 @@ import pandas as pd
 import random
 import emoji
 from methods import (confirm_choice, confirm_wedding_item,
-                     confirm_cost, guestcount)
+                     confirm_cost, guest_count)
 
 
 class WeddingItems:
@@ -31,7 +31,7 @@ class WeddingItems:
 
 class Venue(WeddingItems):
     def get_recc(self):
-        print(emoji.emojize("Here are some recommendations for you :house:",
+        print(emoji.emojize("""Here are some recommendations for you :house:""",
                             variant="emoji_type"))
 
         with open('recc.csv') as f:
@@ -42,9 +42,9 @@ class Venue(WeddingItems):
                           row[1], "' which costs: $", row[2],
                           ". It is", row[3]
                           )
-        print("Option D.  Randomly select one for me! \nOption E.\
-              Leave blank (an average price will be used to calculate\
-              the final cost estimate)")
+        print("""Option D.  Randomly select one for me! \nOption E."""
+              """Leave blank (an average price will be used to calculate"""
+              """the final cost estimate)""")
         print(Style.RESET_ALL)
         option = confirm_choice()
         dataFrame = pd.read_csv('recc.csv')
@@ -84,9 +84,9 @@ class Florist(WeddingItems):
                           "' which costs: $", row[2],
                           ". They offer a ", row[3]
                           )
-        print("Option D.  Randomly select one for me! \nOption E.\
-                Leave blank(an average price will be used to calculate\
-                the final cost estimate)")
+        print("""Option D.  Randomly select one for me! \nOption E."""
+              """Leave blank (an average price will be used to calculate"""
+              """the final cost estimate)""")
         print(Style.RESET_ALL)
         option = confirm_choice()
         dataFrame = pd.read_csv('recc.csv')
@@ -114,7 +114,7 @@ class Florist(WeddingItems):
 
 class Food(WeddingItems):
     def get_recc(self):
-        num_people = int(guestcount())
+        num_people = int(guest_count())
         print(emoji.emojize("Here are some recommendations for\
                              you :fork_and_knife:", variant="emoji_type"))
         with open('recc.csv') as f:
@@ -123,9 +123,9 @@ class Food(WeddingItems):
                 if index == 4 or index == 5 or index == 6:
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1],
                           "' which costs: $", row[2], "pp. They", row[3])
-        print("Option D. Randomly select one for me! \nOption E.\
-               Leave blank (an average price will be used to calculate\
-               the final cost estimate)")
+        print("""Option D.  Randomly select one for me! \nOption E."""
+              """Leave blank (an average price will be used to calculate"""
+              """the final cost estimate)""")
         print(Style.RESET_ALL)
         option = confirm_choice()
         dataFrame = pd.read_csv('recc.csv')
@@ -164,9 +164,9 @@ class Decoration(WeddingItems):
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1],
                           "' which costs: $", row[2], ". They", row[3]
                           )
-        print("Option D. Randomly select one for me! \nOption E.\
-               Leave blank (an average price will be used to calculate\
-               the final cost estimate)")
+        print("""Option D.  Randomly select one for me! \nOption E."""
+              """Leave blank (an average price will be used to calculate"""
+              """the final cost estimate)""")
         print(Style.RESET_ALL)
         option = confirm_choice()
         dataFrame = pd.read_csv('recc.csv')
@@ -206,9 +206,9 @@ class MakeupHair(WeddingItems):
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1],
                           "' which costs: $", row[2], ". They offer", row[3]
                           )
-        print("Option D. Randomly select one for me! \nOption E.\
-              Leave blank (an average price will be used to calculate\
-              the final cost estimate)")
+        print("""Option D.  Randomly select one for me! \nOption E."""
+              """Leave blank (an average price will be used to calculate"""
+              """the final cost estimate)""")
         print(Style.RESET_ALL)
         option = confirm_choice()
         dataFrame = pd.read_csv('recc.csv')
@@ -246,9 +246,9 @@ class PhotoVideo(WeddingItems):
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1],
                           "' which costs: $", row[2], ". They offer", row[3]
                           )
-        print("Option D. Randomly select one for me! \nOption E.\
-               Leave blank (an average price will be used to calculate\
-               the final cost estimate)")
+        print("""Option D.  Randomly select one for me! \nOption E."""
+              """Leave blank (an average price will be used to calculate"""
+              """the final cost estimate)""")
         print(Style.RESET_ALL)
         option = confirm_choice()
         dataFrame = pd.read_csv('recc.csv')
@@ -285,9 +285,9 @@ class Dress(WeddingItems):
                 if index == 19 or index == 20 or index == 21:
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1],
                           "' which costs: $", row[2], ". They ", row[3])
-        print("Option D. Randomly select one for me! \nOption E.\
-               Leave blank (an average price will be used to calculate\
-               the final cost estimate)")
+        print("""Option D.  Randomly select one for me! \nOption E."""
+              """Leave blank (an average price will be used to calculate"""
+              """the final cost estimate)""")
         print(Style.RESET_ALL)
         option = confirm_choice()
         dataFrame = pd.read_csv('recc.csv')
@@ -322,9 +322,9 @@ class Cake(WeddingItems):
                 if index == 22 or index == 23 or index == 24:
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1],
                           "' which costs: $", row[2], ". They ", row[3])
-        print("Option D. Randomly select one for me! \nOption E.\
-               Leave blank (an average price will be used to calculate\
-               the final cost estimate)")
+        print("""Option D.  Randomly select one for me! \nOption E."""
+              """Leave blank (an average price will be used to calculate"""
+              """the final cost estimate)""")
         print(Style.RESET_ALL)
         option = confirm_choice()
         dataFrame = pd.read_csv('recc.csv')
@@ -359,9 +359,9 @@ class Ring(WeddingItems):
                 if index == 25 or index == 26 or index == 27:
                     print(Fore.BLUE + "Option", row[0], "is at '", row[1],
                           "' which costs: $", row[2], ". They ", row[3])
-        print("Option D. Randomly select one for me! \nOption E.\
-               Leave blank (an average price will be used to calculate\
-               the final cost estimate)")
+        print("""Option D.  Randomly select one for me! \nOption E."""
+              """Leave blank (an average price will be used to calculate"""
+              """the final cost estimate)""")
         print(Style.RESET_ALL)
         option = confirm_choice()
         dataFrame = pd.read_csv('recc.csv')

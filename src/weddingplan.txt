@@ -1,7 +1,7 @@
-Name: michelle
-Date of Wedding: 2024-10-02
-342 days until the wedding!
-Budget: 100000
+Name: wowfw
+Date of Wedding: 2024-12-10
+410 days until the wedding!
+Budget: 200000
  
 BUDGET PLAN
 Venue Name: LuxeCraves
@@ -13,7 +13,7 @@ Florist Cost: $1000
 
 
 Caterer Name: Nibble
-Caterer Cost: $50000
+Caterer Cost: $1021050
 
 
 Decor Name: Festiva
@@ -36,11 +36,11 @@ Cake Shop Name: Katie'sBaking
 Cake Cost: $350
 
 
-Ring Shop Name: Charm
-Ring Cost: $1000
+Ring Shop Name: msienfs
+Ring Cost: $241
 
 BUDGET
 
-Your total budget was: $ 40000
-Your total estimated cost comes to: $ 69850
-You are over your budget! You need to cut $ 29850 out!
+Your total budget was: $ 200000
+Your total estimated cost comes to: $ 1040141
+You are over your budget! You need to cut $ 840141 out!

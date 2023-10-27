@@ -5,6 +5,7 @@ from methods import get_details
 from weddingitems import (Venue, Florist, Food, Decoration,
                           MakeupHair, PhotoVideo, Dress, Cake, Ring)
 
+
 # Opening App (Intro)
 f = Figlet(font='contessa')
 print(f.renderText('~~~ Congratulations! ~~~'))
