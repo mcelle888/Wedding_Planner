@@ -8,6 +8,16 @@
 
 [Pep8 Guide Link](https://peps.python.org/pep-0008/#class-names) 
 
+Code was written using python and following PEP8 Styling Guide linked above. Some notable styling features followed include:
+
+1. Four line indenting 
+2. Adherance to naming conventions (e.g. CapWord for classes and exceptions, lowercase and underscores forr functions and variables)
+3. Self is first argument for instance methods
+4. Line breaks occur before the binary operator for formulas
+5. Modules all have lower case names with underscores used to improve readability in some cases
+6. Inline comments avoided with block comments indented to the same level as code
+7. Maximum line length of 79 characters  
+
 ### Features in the Application
 
 #### Feature 1 : User's basic information
@@ -24,14 +34,21 @@ Creates a text file containing the users basic information, suppliers and final 
 
 ### Help Documentation 
 
+
+#### Hardware Requirements
+
 #### App Installation Guide
 
 
 
 ##### 1. Open Terminal
-In your terminal window, check that you have the correct version of python installed 
+In your terminal window, check that you have the correct version of python installed. You can do this by running:
+```bash
+python --version
+```
+If python version is not installed or you have a version below 3.10, the installation and update links can be found [here](https://www.python.org/downloads/) 
 
-#### 2. Download Wedding App
+##### 2. Download Wedding App
 
 Copy and paste the following to your terminal: 
 ```bash
@@ -40,14 +57,14 @@ git clone git@github.com:mcelle888/MichelleLiang_T1A3.git
 
 The file can also be found from github [here](https://github.com/mcelle888/MichelleLiang_T1A3). 
 
-#### 3. Open the application file that was cloned 
+##### 3. Open the application file that was cloned 
 ```bash
 cd MichelleLiang_T1A3/src
 ```
 
-#### 4. Run the following executable command to open the application 
+##### 4. Run the following executable command to open the application 
 Running the code below will:
-1. Check whether or not python is installed
+1. Check again whether or not python is installed
 2. Create and activate a virtual environment
 3. Install all dependencies required for this app
 4. Run the application file
@@ -57,9 +74,16 @@ Running the code below will:
 bash open_app.sh
 ```
 
-#### Dependencies required
+#### Dependencies Required:
 
-#### Hardware Requirements
+```python
+pyfiglet == 1.0.2
+emoji == 2.8.0
+colorama == 0.4.6
+pandas == 2.1.1 
+pytest == 7.4.3
+```
+
 
 
 
