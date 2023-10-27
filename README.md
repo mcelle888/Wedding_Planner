@@ -18,7 +18,8 @@ Code was written using python and following PEP8 Styling Guide linked above. Som
 6. Inline comments avoided with block comments indented to the same level as code
 7. Maximum line length of 79 characters  
 
-### Features in the Application
+
+### Features of the Application
 
 #### Feature 1 : User's basic information
 Allows the user to input some basic information about themselves and the wedding including their name, budget and date of wedding.
@@ -29,18 +30,13 @@ Goes through a list of vendors for a wedding and asks the user if they have a ch
 
 
 #### Feature 3:
-Creates a text file containing the users basic information, suppliers and final cost estimate. Will print whether they are under or over budget and by how much. 
+Creates a text file the user can save that contains the users basic information, suppliers and final cost estimate. Will print whether they are under or over budget and by how much. 
 
 
-### Help Documentation 
+### Help Documentation
 
-
-#### Hardware Requirements
 
 #### App Installation Guide
-
-
-
 ##### 1. Open Terminal
 In your terminal window, check that you have the correct version of python installed. You can do this by running:
 ```bash
@@ -153,5 +149,14 @@ End of day 4
 
 
 
-#### References 
+### References 
 
+Hartley, J. colorama - PyPI. Available at: https://pypi.org/project/colorama/ 
+
+Kim, T & Wurster, K.  emoji - PyPI. Available at: https://pypi.org/project/emoji/  
+
+Pytest: helps you write better programs (no date) pytest. Available at: https://docs.pytest.org/en/7.4.x/ 
+
+Rossum, G. van, Warsaw, B. and Coghlan, A. (no date) PEP 8 – Style Guide for Python Code. Available at: https://peps.python.org/pep-0008/   
+
+Waller, P.  pyfiglet - PyPI. Available at: https://pypi.org/project/pyfiglet/ 
