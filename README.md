@@ -8,10 +8,10 @@
 
 [Pep8 Guide Link](https://peps.python.org/pep-0008/#class-names) 
 
-Code was written using python and following PEP8 Styling Guide linked above. Some notable styling features followed include:
+The source code was written using python and following PEP8 Styling Guide linked above. Some notable styling features followed include:
 
 1. Four line indenting 
-2. Adherance to naming conventions (e.g. CapWord for classes and exceptions, lowercase and underscores forr functions and variables)
+2. Adherance to naming conventions (e.g. CapWord for classes and exceptions, lowercase and underscores for functions and variables)
 3. Self is first argument for instance methods
 4. Line breaks occur before the binary operator for formulas
 5. Modules all have lower case names with underscores used to improve readability in some cases
@@ -28,23 +28,25 @@ Allows the user to input some basic information about themselves and the wedding
 #### Feature 2: 
 Goes through a list of vendors for a wedding and asks the user if they have a chosen vendor or not. If they do, they are asked to enter the name and the cost. If not, they are provided with 3 reccommendations for each vendor with their respective costs and a short description. The user can pick one of these recommendations or they can choose to have the app randomly pick out of the three or finally they can choose to leave the vendor blank (in this case, an average cost will be used to calculate the final cost estimate). 
 
-
 #### Feature 3:
-Creates a text file the user can save that contains the users basic information, suppliers and final cost estimate. Will print whether they are under or over budget and by how much. 
+Creates a timestamped to-do list for the user to follow. This contains helps the user schedule important tasks by giving them an estimated deadline of when these tasks should be done relative to how many days left until their wedding date. 
+
+#### Feature 4:
+Creates a text file the user can save that contains all the information collected and processed. This includes the users basic information, vendor name and costs,  final cost estimations (which also tells them if they are over or under budget) and a scheduled to-do list of tasks to be completed before the big day!
 
 
 ### Help Documentation
 
 
 #### App Installation Guide
-##### 1. Open Terminal
+#### 1. Open Terminal
 In your terminal window, check that you have the correct version of python installed. You can do this by running:
 ```bash
 python --version
 ```
 If python version is not installed or you have a version below 3.10, the installation and update links can be found [here](https://www.python.org/downloads/) 
 
-##### 2. Download Wedding App
+#### 2. Download Wedding App
 
 Copy and paste the following to your terminal: 
 ```bash
@@ -53,12 +55,16 @@ git clone git@github.com:mcelle888/MichelleLiang_T1A3.git
 
 The file can also be found from github [here](https://github.com/mcelle888/MichelleLiang_T1A3). 
 
-##### 3. Open the application file that was cloned 
+#### 3. Open the application file that was cloned and cd into the src directory: 
 ```bash
 cd MichelleLiang_T1A3/src
 ```
 
-##### 4. Run the following executable command to open the application 
+#### 4. Run the following executable command to open the application:
+```bash
+bash open_app.sh
+```
+
 Running the code below will:
 1. Check again whether or not python is installed
 2. Create and activate a virtual environment
@@ -66,9 +72,6 @@ Running the code below will:
 4. Run the application file
 
 
-```bash
-bash open_app.sh
-```
 
 #### Dependencies Required:
 
