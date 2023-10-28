@@ -1,9 +1,9 @@
 ~ USER DETAILS ~ 
 
-Name: sand
-Date of Wedding: 2024-07-12
-258 days until the wedding!
-Budget:$ 30000
+Name: Micelle
+Date of Wedding: 2024-10-02
+340 days until the wedding!
+Budget:$ 200000
  
 ~ VENDOR COSTS ~
 
@@ -12,71 +12,69 @@ Venue Name: LuxeCraves
 Venue Cost: $10000
 
 
-Florist Name: Summer Retreat
-Florist Cost: $15000
+Florist Name: Harvest
+Florist Cost: $1500
 
 
-Caterer Name: LuxeCraves
-Caterer Cost: $10000
+Caterer Name: Nibble
+Caterer Cost: $600
 
 
-Decor Name: Undecided*
-Decor Cost: $1800
+Decor Name: Summer Retreat
+Decor Cost: $15000
 
 
-Beauty Service Name: jgdjr
-Beauty Service Cost: $800
+Beauty Service Name: Summer Retreat
+Beauty Service Cost: $15000
 
 
-Photographer and Videographer Name: ArtStudio
-Photographer and Videographer Cost: $5500
+Photographer and Videographer Name: Summer Retreat
+Photographer and Videographer Cost: $15000
 
 
-Dress Shop Name: Simple
-Dress Cost: $2000
+Dress Shop Name: Undecided*
+Dress Cost: $3000
 
 
-Cake Shop Name: cake
-Cake Cost: $1200
+Cake Shop Name: LuxeCraves
+Cake Cost: $10000
 
 
-Ring Shop Name: Enchant
-Ring Cost: $2500
+Ring Shop Name: Tornbury Castle
+Ring Cost: $20000
 
 ~ BUDGET ~ 
 
-Your total budget was: $ 30000
-Your total estimated cost comes to: $ 48800
-You are over your budget! You need to cut $ 18800 out!
-
-
+Your total budget was: $ 200000
+Your total estimated cost comes to: $ 90100
+You are within your budget! You have excess $ 109900 to spend!
 
  ~ PLANNING CHECKLIST ~
 
-2023-11-23
+2023-12-01
 Start looking for vendors
 
-2023-12-31
+2024-01-21
 Hire/Book all suppliers and vendors
 
-2024-02-08
+2024-03-12
 Send out invitations
 
-2024-03-31
+2024-05-19
 Food Tasting
 Call vendors to confirm
 
-2024-04-26
+2024-06-22
 Hair and Makeup Trial
 Dress collection and last alterations
 
-2024-05-21
+2024-07-26
 Organise Final payments for vendors
 Final guest count and plean table arrangements
 Plan accommadation and transport
 
-2024-06-16
+2024-08-29
 Ceremony and Reception rehearsals
 
-2024-07-12
+2024-10-02
 D-DAY: GET MARRIED!

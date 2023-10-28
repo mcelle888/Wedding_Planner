@@ -234,7 +234,8 @@ with open('weddingplan.txt', 'a') as f:
 
 
 
-# Opens a text file of the wedding plan for the user to save 
+# Opens a text file of the wedding plan for the user to save
 subprocess.call(['notepad.exe', 'weddingplan.txt'])
-
-
+ 
+print(emoji.emojize("""Thanks for using the Wedding App :smiling_face_with_hearts:"""
+                    """\nHappy planning!:confetti_ball:""", variant = "emoji_type"))
