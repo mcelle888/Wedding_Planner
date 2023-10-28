@@ -22,7 +22,7 @@ user_details = get_details()
 # Venue input
 venue_object = Venue("venue")
 venue_object.ask_user()
-print(Fore.BLUE + f"{venue_object.__dict__}")
+print(Fore.LIGHTBLUE_EX + f"{venue_object.__dict__}")
 with open('weddingplan.txt', 'a') as f:
     f.write("\nVenue Name: ")
     f.write(venue_object.name)
