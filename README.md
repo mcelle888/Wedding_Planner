@@ -25,13 +25,13 @@ The source code was written using python and following PEP8 Styling Guide linked
 Allows the user to input some basic information about themselves and the wedding including their name, budget and date of wedding.
 
 
-#### Feature 2: 
+#### Feature 2: User input for different wedding vendors and reccomendations
 Goes through a list of vendors for a wedding and asks the user if they have a chosen vendor or not. If they do, they are asked to enter the name and the cost. If not, they are provided with 3 reccommendations for each vendor with their respective costs and a short description. The user can pick one of these recommendations or they can choose to have the app randomly pick out of the three or finally they can choose to leave the vendor blank (in this case, an average cost will be used to calculate the final cost estimate). 
 
-#### Feature 3:
+#### Feature 3: Scheduled to-do list
 Creates a timestamped to-do list for the user to follow. This contains helps the user schedule important tasks by giving them an estimated deadline of when these tasks should be done relative to how many days left until their wedding date. 
 
-#### Feature 4:
+#### Feature 4: Prints the final plan on a text editor for user to save/print
 Creates a text file the user can save that contains all the information collected and processed. This includes the users basic information, vendor name and costs,  final cost estimations (which also tells them if they are over or under budget) and a scheduled to-do list of tasks to be completed before the big day!
 
 
