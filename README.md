@@ -158,7 +158,11 @@ End of day 5
 ![screenshot14](docs/day5_end.png)
 
 
+#### Screenshots Day 6
 
+End of day 6
+
+![screenshot15](docs/day6_end.png)
 
 
 ### References 
