@@ -6,6 +6,8 @@ import emoji
 from methods import (confirm_choice, confirm_wedding_item,
                      confirm_cost, guest_count)
 
+# Parent class for vendors
+
 
 class WeddingItems:
     name = None
@@ -24,7 +26,7 @@ class WeddingItems:
             self.get_recc()
         return self.name, self.cost
 
-# Instances of Wedding Items
+# Child Classes for Wedding Items (Different Vendors)
 
 # VENUE
 

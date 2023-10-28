@@ -1,6 +1,4 @@
 from weddingitems import WeddingItems, Venue, Florist, Dress, PhotoVideo
-import datetime
-
 import pytest
 
 # TEST ONE: Testing the get_recc function to see that user input is drawing the

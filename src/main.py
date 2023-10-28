@@ -180,7 +180,7 @@ else:
         f.write(str((totalcost - user_details[0])))
         f.write(" out!\n\n")
 
-# Prints scheduled to do list (function found in methods.py)
+# Calculates and prints scheduled to do list 
 
 task_one = (round(user_details[1] * 0.1))
 task_two = (round(user_details[1] * 0.25))
@@ -236,6 +236,6 @@ with open('weddingplan.txt', 'a') as f:
 
 # Opens a text file of the wedding plan for the user to save
 subprocess.call(['notepad.exe', 'weddingplan.txt'])
- 
+
 print(emoji.emojize("""Thanks for using the Wedding App :smiling_face_with_hearts:"""
                     """\nHappy planning!:confetti_ball:""", variant = "emoji_type"))

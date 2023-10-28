@@ -52,7 +52,7 @@ def get_details():
     
     return total_budget, diff
 
-# Error handling methods
+# Error handling methods and user input methods
 
 # For entering the date of wedding
 
