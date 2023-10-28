@@ -3,7 +3,6 @@ from colorama import Fore, Style
 import datetime
 
 
-
 def get_details():
     user_name = input("Please enter your name: ")
     wedding_date_y = int(enter_year())
@@ -29,10 +28,11 @@ def get_details():
         print("Okay, let's try again")
         get_details()
     elif answer == "y":
-        print(emoji.emojize("""Thanks for that:grinning_face_with_smiling_eyes:"""
-                             ,variant="emoji_type"))
-        print("There are", diff, "days left till the wedding." 
-              " Let's get planning!")
+        print(emoji.emojize("""Thanks for that"""
+                            """:grinning_face_with_smiling_eyes:""",
+                            variant="emoji_type"))
+        print("""There are""", diff,
+              """days left till the wedding. Let's get planning!""")
 
         # Printing to the end wedding plan text file
         with open('weddingplan.txt', 'w') as f:
@@ -49,7 +49,7 @@ def get_details():
             f.write(str(total_budget))
             f.write('\n \n')
             f.write("~ VENDOR COSTS ~\n\n")
-    
+
     return total_budget, diff
 
 # Error handling methods and user input methods
@@ -74,7 +74,7 @@ def enter_year():
         except ValueError:
             response = None
             print(Fore.RED + """Invalid input, please enter a 4 digit"""
-                   """ number for a future date""")
+                  """ number for a future date""")
             print(Style.RESET_ALL)
     return response
 
@@ -92,7 +92,7 @@ def enter_month():
         except ValueError:
             response = None
             print(Fore.RED + """Invalid input, please enter a number"""
-                """ between 1 and 12""")                
+                  """ between 1 and 12""")
             print(Style.RESET_ALL)
     return response
 
@@ -110,7 +110,7 @@ def enter_day():
         except ValueError:
             response = None
             print(Fore.RED + """Invalid input, please enter a number"""
-                   """ value for the day""")
+                  """ value for the day""")
             print(Style.RESET_ALL)
     return response
 
@@ -126,7 +126,7 @@ def enter_budget():
         except ValueError:
             response = None
             print(Fore.RED + """Invalid input, please enter a number"""
-                   """ for your budget""")
+                  """ for your budget""")
             print(Style.RESET_ALL)
     return response
 
@@ -153,7 +153,8 @@ def confirm_wedding_item(item_type):
     response = None
     while response is None:
         try:
-            response = input(Fore.LIGHTMAGENTA_EX + f"""Have you chosen a {item_type}?"""
+            response = input(Fore.LIGHTMAGENTA_EX
+                             + f"""Have you chosen a {item_type}?"""
                              """ Please enter 'y' or 'n' """).lower()
             if response != 'y' and response != 'n':
                 raise ValueError
@@ -176,7 +177,7 @@ def confirm_cost(item_type):
         except ValueError:
             response = None
             print(Fore.RED + """Invalid input, please enter a number"""
-                   """ for the cost""")
+                  """ for the cost""")
             print(Style.RESET_ALL)
     return response
 
@@ -188,14 +189,14 @@ def confirm_choice():
     while choice is None:
         try:
             choice = input("""Please enter 'A' or 'B' or 'C' """
-                            """or 'D' or 'E': """).upper()
+                           """or 'D' or 'E': """).upper()
             if (choice != 'A' and choice != 'B' and choice != 'C'
                 and choice != 'D' and choice != 'E'
                 ):
                 raise ValueError
         except ValueError:
             choice = None
-            print(Fore.RED + """Invalid input, please type """ 
+            print(Fore.RED + """Invalid input, please type """
                   """'A' or 'B' or 'C' or 'D' or 'E'""")
             print(Style.RESET_ALL)
     return choice
@@ -213,10 +214,7 @@ def guest_count():
         except ValueError:
             response = None
             print(Fore.RED + """Invalid input, please enter a"""
-                   """ number for the guest""")
+                  """ number for the guest""")
             print(Style.RESET_ALL)
 
     return response
-
-
-

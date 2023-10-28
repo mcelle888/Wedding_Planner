@@ -3,37 +3,37 @@
 Name: Michelle
 Date of Wedding: 2024-10-02
 340 days until the wedding!
-Budget:$ 50000
+Budget:$ 20000
  
 ~ VENDOR COSTS ~
 
 
-Venue Name: Undecided*
-Venue Cost: $15000
+Venue Name: LuxeCraves
+Venue Cost: $10000
 
 
-Florist Name: PetalHouse
-Florist Cost: $3000
+Florist Name: FlowersbySam
+Florist Cost: $1000
 
 
 Caterer Name: Nibble
 Caterer Cost: $6000
 
 
-Decor Name: Splash
-Decor Cost: $1000
+Decor Name: Festiva
+Decor Cost: $1500
 
 
 Beauty Service Name: Jesse'sBeauty
 Beauty Service Cost: $500
 
 
-Photographer and Videographer Name: Undecided*
+Photographer and Videographer Name: Capture
 Photographer and Videographer Cost: $3500
 
 
-Dress Shop Name: LuxeCraves
-Dress Cost: $10000
+Dress Shop Name: Simple
+Dress Cost: $2000
 
 
 Cake Shop Name: Katie'sBaking
@@ -45,9 +45,11 @@ Ring Cost: $1000
 
 ~ BUDGET ~ 
 
-Your total budget was: $ 50000
-Your total estimated cost comes to: $ 40350
-You are within your budget! You have excess $ 9650 to spend!
+Your total budget was: $ 20000
+Your total estimated cost comes to: $ 25850
+You are over your budget! You need to cut $ 5850 out!
+
+
 
  ~ PLANNING CHECKLIST ~
 

@@ -65,4 +65,3 @@ testItem = [
 def test_item_creation(itemData):
     newItem = WeddingItems(itemData.get('item_type'))
     assert newItem.item_type == 'Car'
-

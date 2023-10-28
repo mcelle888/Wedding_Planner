@@ -26,7 +26,7 @@ print(Fore.LIGHTBLUE_EX + f"{venue_object.__dict__}")
 with open('weddingplan.txt', 'a') as f:
     f.write("\nVenue Name: ")
     f.write(venue_object.name)
-    f.write("\nVenue Cost: $") 
+    f.write("\nVenue Cost: $")
     f.write(str(venue_object.cost))
     f.write("\n\n")
 
@@ -47,7 +47,7 @@ food_object.ask_user()
 print(Fore.LIGHTBLUE_EX + f"{food_object.__dict__}")
 with open('weddingplan.txt', 'a') as f:
     f.write("\nCaterer Name: ")
-    f.write(food_object.name) 
+    f.write(food_object.name)
     f.write("\nCaterer Cost: $")
     f.write(str(food_object.cost))
     f.write("\n\n")
@@ -58,7 +58,7 @@ decoration_object.ask_user()
 print(Fore.LIGHTBLUE_EX + f"{decoration_object.__dict__}")
 with open('weddingplan.txt', 'a') as f:
     f.write("\nDecor Name: ")
-    f.write(decoration_object.name) 
+    f.write(decoration_object.name)
     f.write("\nDecor Cost: $")
     f.write(str(decoration_object.cost))
     f.write("\n\n")
@@ -69,7 +69,7 @@ makeup_hair_object.ask_user()
 print(Fore.LIGHTBLUE_EX + f"{makeup_hair_object.__dict__}")
 with open('weddingplan.txt', 'a') as f:
     f.write("\nBeauty Service Name: ")
-    f.write(makeup_hair_object.name) 
+    f.write(makeup_hair_object.name)
     f.write("\nBeauty Service Cost: $")
     f.write(str(makeup_hair_object.cost))
     f.write("\n\n")
@@ -80,7 +80,7 @@ photo_video_object.ask_user()
 print(Fore.LIGHTBLUE_EX + f"{photo_video_object.__dict__}")
 with open('weddingplan.txt', 'a') as f:
     f.write("\nPhotographer and Videographer Name: ")
-    f.write(photo_video_object.name) 
+    f.write(photo_video_object.name)
     f.write("\nPhotographer and Videographer Cost: $")
     f.write(str(photo_video_object.cost))
     f.write("\n\n")
@@ -91,7 +91,7 @@ dress_object.ask_user()
 print(Fore.LIGHTBLUE_EX + f"{dress_object.__dict__}")
 with open('weddingplan.txt', 'a') as f:
     f.write("\nDress Shop Name: ")
-    f.write(dress_object.name) 
+    f.write(dress_object.name)
     f.write("\nDress Cost: $")
     f.write(str(dress_object.cost))
     f.write("\n\n")
@@ -102,7 +102,7 @@ cake_object.ask_user()
 print(Fore.LIGHTBLUE_EX + f"{cake_object.__dict__}")
 with open('weddingplan.txt', 'a') as f:
     f.write("\nCake Shop Name: ")
-    f.write(cake_object.name) 
+    f.write(cake_object.name)
     f.write("\nCake Cost: $")
     f.write(str(cake_object.cost))
     f.write("\n\n")
@@ -113,12 +113,12 @@ ring_object.ask_user()
 print(Fore.LIGHTBLUE_EX + f"{ring_object.__dict__}")
 with open('weddingplan.txt', 'a') as f:
     f.write("\nRing Shop Name: ")
-    f.write(ring_object.name) 
+    f.write(ring_object.name)
     f.write("\nRing Cost: $")
     f.write(str(ring_object.cost))
     f.write("\n\n")
     f.write("~ BUDGET ~ \n\n")
-   
+
 
 print(Style.RESET_ALL)
 
@@ -130,31 +130,31 @@ print(emoji.emojize(
 
 # Budget Calculator for wedding plan
 totalcost = (
-            int(venue_object.cost) 
-            + int(florist_object.cost) 
-            + int(food_object.cost) 
-            + int(decoration_object.cost) 
-            + int(makeup_hair_object.cost) 
+            int(venue_object.cost)
+            + int(florist_object.cost)
+            + int(food_object.cost)
+            + int(decoration_object.cost)
+            + int(makeup_hair_object.cost)
             + int(photo_video_object.cost)
-            + int(dress_object.cost) 
-            + int(cake_object.cost) 
+            + int(dress_object.cost)
+            + int(cake_object.cost)
             + int(ring_object.cost)
             )
 
 difference = user_details[0] - totalcost
 
-print(Fore.LIGHTMAGENTA_EX 
+print(Fore.LIGHTMAGENTA_EX
       + f"Your budget was $ {user_details[0]}")
 print(f"Your estimated cost is $ {totalcost}")
-if totalcost <= user_details[0]: 
+if totalcost <= user_details[0]:
     print(f"You are within your budget! You have excess $ {difference}")
 else:
-    print(f"You are over your budget! You have to cut $ {difference * - 1}")          
+    print(f"You are over your budget! You have to cut $ {difference * - 1}")
 print(Style.RESET_ALL)
 
 # Printing message
 
-print(emoji.emojize("Now let's print out a plan for you :party_popper:", 
+print(emoji.emojize("Now let's print out a plan for you :party_popper:",
                     variant="emoji_type"))
 
 if totalcost <= user_details[0]:
@@ -180,62 +180,59 @@ else:
         f.write(str((totalcost - user_details[0])))
         f.write(" out!\n\n")
 
-# Calculates and prints scheduled to do list 
+# Calculates and prints scheduled to do list
 
-task_one = (round(user_details[1] * 0.1))
-task_two = (round(user_details[1] * 0.25))
-task_three = (round(user_details[1] * 0.4))
-task_four = (round(user_details[1] * 0.6))
-task_five = (round(user_details[1] * 0.7))
-task_six = (round(user_details[1] * 0.8))
-task_seven = (round(user_details[1] * 0.9))
-task_eight = (round(user_details[1] * 1))
+# Important timestamps (0.1 = 10% of days left till wedding)
+timestamps = [0.1, 0.25, 0.4, 0.6, 0.7, 0.8, 0.9, 1]
+
+tasks = []
+for i in timestamps:
+    tasks.append(i * round(user_details[1]))
 
 today = datetime.date.today()
-end_date_one = (today + datetime.timedelta(days=task_one)).strftime("%Y-%m-%d")
-end_date_two = (today + datetime.timedelta(days=task_two)).strftime("%Y-%m-%d")
-end_date_three = (today + datetime.timedelta(days=task_three)).strftime("%Y-%m-%d")
-end_date_four = (today + datetime.timedelta(days=task_four)).strftime("%Y-%m-%d")
-end_date_five = (today + datetime.timedelta(days=task_five)).strftime("%Y-%m-%d")
-end_date_six = (today + datetime.timedelta(days=task_six)).strftime("%Y-%m-%d")
-end_date_seven = (today + datetime.timedelta(days=task_seven)).strftime("%Y-%m-%d")
-end_date_eight = (today + datetime.timedelta(days = task_eight)).strftime("%Y-%m-%d")
+
+dates = (
+        [(today + datetime.timedelta(days=i))
+         .strftime("%Y-%m-%d") for i in tasks]
+        )
 
 with open('weddingplan.txt', 'a') as f:
     f.write("\n\n ~ PLANNING CHECKLIST ~\n\n")
-    f.write(end_date_one)
+    f.write(dates[0])
     f.write("\n")
     f.write("Start looking for vendors\n\n")
-    f.write(end_date_two)
+    f.write(dates[1])
     f.write("\n")
     f.write("Hire/Book all suppliers and vendors\n\n")
-    f.write(end_date_three)
+    f.write(dates[2])
     f.write("\n")
     f.write("Send out invitations\n\n")
-    f.write(end_date_four)
+    f.write(dates[3])
     f.write("\n")
     f.write("Food Tasting\n")
     f.write("Call vendors to confirm\n\n")
-    f.write(end_date_five)
+    f.write(dates[4])
     f.write("\n")
     f.write("Hair and Makeup Trial\n")
     f.write("Dress collection and last alterations\n\n")
-    f.write(end_date_six)
+    f.write(dates[5])
     f.write("\n")
     f.write("Organise Final payments for vendors\n")
     f.write("Final guest count and plean table arrangements\n")
     f.write("Plan accommadation and transport\n\n")
-    f.write(end_date_seven)
+    f.write(dates[6])
     f.write("\n")
     f.write("Ceremony and Reception rehearsals\n\n")
-    f.write(end_date_eight)
+    f.write(dates[7])
     f.write("\n")
     f.write("D-DAY: GET MARRIED!")
 
 
-
 # Opens a text file of the wedding plan for the user to save
+
 subprocess.call(['notepad.exe', 'weddingplan.txt'])
 
-print(emoji.emojize("""Thanks for using the Wedding App :smiling_face_with_hearts:"""
-                    """\nHappy planning!:confetti_ball:""", variant = "emoji_type"))
+print(emoji.emojize("""Thanks for using the Wedding App"""
+                    """ :smiling_face_with_hearts:"""
+                    """\nHappy planning!:confetti_ball:""",
+                    variant="emoji_type"))
