@@ -55,7 +55,7 @@ The file can also be found from github [here](https://github.com/mcelle888/Miche
 
 #### 3. Open the application file that was cloned and cd into the src directory: <!-- omit in toc -->
 ```bash
-cd MichelleLiang_T1A3/src
+cd Wedding_Planner/src
 ```
 
 #### 4. Run the following executable command to open the application: <!-- omit in toc -->
