@@ -53,11 +53,11 @@ Copy and paste the following to your terminal:
 git clone git@github.com:mcelle888/MichelleLiang_T1A3.git
 ```
 
-The file can also be found from github [here](https://github.com/mcelle888/MichelleLiang_T1A3). 
+The file can also be found from github [here](https://github.com/mcelle888/Wedding_Planner). 
 
 #### 3. Open the application file that was cloned and cd into the src directory: <!-- omit in toc -->
 ```bash
-cd Wedding_Planner/src
+cd Weddine_Planner/src
 ```
 
 #### 4. Run the following executable command to open the application: <!-- omit in toc -->
