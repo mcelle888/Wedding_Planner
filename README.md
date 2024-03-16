@@ -22,6 +22,8 @@ A terminal application to help with wedding planning! My first application built
 #### Feature 1 : User's basic information <!-- omit in toc -->
 Allows the user to input some basic information about themselves and the wedding including their name, budget and date of wedding.
 
+![screenshot](./docs/wedding_planner.png)
+
 
 #### Feature 2: User input for different wedding vendors and reccomendations <!-- omit in toc -->
 Goes through a list of vendors for a wedding and asks the user if they have a chosen vendor or not. If they do, they are asked to enter the name and the cost. If not, they are provided with 3 reccommendations for each vendor with their respective costs and a short description. The user can pick one of these recommendations or they can choose to have the app randomly pick out of the three or finally they can choose to leave the vendor blank (in this case, an average cost will be used to calculate the final cost estimate). 
